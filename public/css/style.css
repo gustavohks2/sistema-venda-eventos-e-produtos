@@ -1,0 +1,25 @@
+/********************* RESET *********************/
+
+*,
+*:after,
+*:before {
+   margin: 0;
+   padding: 0;
+   box-sizing: inherit;
+}
+
+html {
+   font-size: 62.5%;
+   box-sizing: border-box;
+}
+
+body {
+   color: #505050;
+   font-weight: 400;
+   font-family: "Dosis", "Laoto", "Roboto", sans-serif;
+}
+
+img, video { max-width: 100%; }
+
+ul, li { list-style: none; }
+
