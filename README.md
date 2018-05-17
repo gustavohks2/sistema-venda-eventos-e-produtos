@@ -1,1 +1,1 @@
-# Sistem de Controle de Vendas de Produtos e Realização de Eventos
+# Sistema de Controle de Vendas de Produtos e Realização de Eventos
