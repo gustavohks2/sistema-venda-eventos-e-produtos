@@ -1,0 +1,20 @@
+{
+   "name": "tads/sistema-venda-eventos-e-produtos",
+   "description": "Sistema para venda de eventos e produtos",
+   "license": "MIT",
+   "type": "project",
+   "authors": [
+      {"name": "Gustavo Henrique", "email": "gustavohks2@gmail.com"},
+      {"name": "Wesllen", "email": "emailaqui@mail.com"},
+      {"name": "Luacas", "email": "emailaqui@mail.com"}
+   ],
+   "autoload": {
+      "psr-4": {
+         "App\\": "app/",
+         "Core\\": "core"
+      }      
+   },
+   "require": {
+      "php": ">=5.4"
+   }
+}
