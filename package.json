@@ -1,0 +1,25 @@
+{
+  "name": "sistema-venda-eventos-e-produtos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass --watch public/sass/main.scss public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavohks2/sistema-venda-eventos-e-produtos.git"
+  },
+  "author": "Gustavo, Wesllen, Lucas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gustavohks2/sistema-venda-eventos-e-produtos/issues"
+  },
+  "homepage": "https://github.com/gustavohks2/sistema-venda-eventos-e-produtos#readme",
+  "devDependencies": {
+    "node-sass": "^4.9.0"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
