@@ -2,13 +2,20 @@
 
 namespace App\Controllers;
 use Core\BaseController;
+use App\Models\Login;
+
 
 class HomeController extends BaseController{
    
     public function index(){
-        $this->view->nome = 'wesllen';
-        $this->Render('home/index');
-//        require_once __DIR__.'/../Views/home/index.phtml';
+        //$this->setPageTitle("Home");
+        //$this->view->nome = 'wesllen';
+        $login = new Login();
+        $r = $login->readall();
+        print_r($r);
+        
+        //$this->Render('home/index', 'layoutHome');
+
     }
     
     public function login(){
@@ -19,5 +26,11 @@ class HomeController extends BaseController{
         echo  $id . '<br>';
         echo $request->get->nome;
         
+    }
+    
+    public function cadastros(){
+        $login = new Login();
+        $login->readAll();
+        var_dump($login);
     }
 }

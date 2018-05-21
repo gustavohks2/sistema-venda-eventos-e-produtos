@@ -63,7 +63,7 @@ class Route{
             } 
         }
         
-        if($found){
+        if(@$found){
             $controller = Container::newController($controller);
 //            $controller->$action();
             
@@ -83,7 +83,7 @@ class Route{
             }
             
         }else{
-            echo 'Rota não encontrada';
+            Container::pageNotFoundRota();
         }
     }
 }
