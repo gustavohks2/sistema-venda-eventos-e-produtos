@@ -8,18 +8,16 @@ use App\Models\Login;
 class HomeController extends BaseController {
    
     public function index(){
-        //$this->setPageTitle("Home");
-        //$this->view->nome = 'wesllen';
-        $login = new Login();
-        $r = $login->readall();
-        print_r($r);
-        
-        //$this->Render('home/index', 'layoutHome');
+        $this->setPageTitle("Home");              
+        $this->Render('home/index', 'layoutHome');
 
     }
     
     public function login(){
         echo 'login';
+        $login = new Login();
+        $r = $login->readall();
+        print_r($r);
     }
     
     public function validarLogin($id, $request){

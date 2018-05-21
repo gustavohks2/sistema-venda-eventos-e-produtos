@@ -2,7 +2,7 @@
    return  [
       
        "database" => [
-         "dbname" => "comercio-eventos-produtos",
+         "dbname" => "SVEP",
          "host" => "localhost",
          "username" => "root",
          "password" => "",

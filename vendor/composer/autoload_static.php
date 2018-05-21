@@ -28,11 +28,22 @@ class ComposerStaticInitb010f24c6a7d8586e7dea7592837ad0b
         ),
     );
 
+    public static $classMap = array (
+        'App\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Controllers/HomeController.php',
+        'App\\Models\\Login' => __DIR__ . '/../..' . '/app/Models/Login.php',
+        'Core\\BaseController' => __DIR__ . '/../..' . '/core/BaseController.php',
+        'Core\\BaseModel' => __DIR__ . '/../..' . '/core/BaseModel.php',
+        'Core\\Container' => __DIR__ . '/../..' . '/core/Container.php',
+        'Core\\DataBase' => __DIR__ . '/../..' . '/core/DataBase.php',
+        'Core\\Route' => __DIR__ . '/../..' . '/core/Route.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitb010f24c6a7d8586e7dea7592837ad0b::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitb010f24c6a7d8586e7dea7592837ad0b::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitb010f24c6a7d8586e7dea7592837ad0b::$classMap;
 
         }, null, ClassLoader::class);
     }
