@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use Core\BaseController;
 use App\Models\Login;
+use App\Models\Cadastro;
 
 
 class HomeController extends BaseController {
@@ -26,9 +27,17 @@ class HomeController extends BaseController {
         
     }
     
-    public function cadastros(){
-        $login = new Login();
-        $login->readAll();
-        var_dump($login);
+    public function cadastro(){
+        $this->setPageTitle('Cadastrar');
+        $this->Render('home/cadastro', 'layoutHome');
+    }
+    public function cadastroCreat($request){
+        $dados = $request->post;
+        $cadastro = new Cadastro();
+        if($cadastro->cadastrar($dados)){
+            echo 'Cadastrado com Sucesso';
+        }else{
+            echo 'OPS algo deu errado no seu cadastro';
+        }
     }
 }

@@ -13,7 +13,7 @@ use Core\BaseModel;
  * @author Wesllen
  */
 class Login extends BaseModel {
-    protected $tabela = "users";
+    protected $tabela = "usuario";
     
     
     
