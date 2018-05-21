@@ -19,6 +19,7 @@ class BaseController {
     private $viewPath;
     private $layoutPath;
     private $pageTitle;
+    private $redirect;
     
     public function __construct() {
         $this->view = new \stdClass();
@@ -63,5 +64,15 @@ class BaseController {
         }else{
             echo $this->pageTitle;
         }
+    }
+    
+    protected function redirect($redirect){
+        $this->redirect = $redirect;
+        $this->getRedirect() === TRUE ? : Container::pageNotFoundLayout();
+    }
+    
+    protected function getRedirect(){
+        header('Location:'. base_url('/').''.$this->redirect);
+        return TRUE;
     }
 }

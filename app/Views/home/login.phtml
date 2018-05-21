@@ -1,0 +1,16 @@
+<?php     
+    if(isset($_SESSION["erro"])){
+            
+            echo $_SESSION['erro'];
+    }
+    
+    ?>
+
+
+<form action="/login/verificar" method="POST">
+        <label>Usuario</label><br>
+        <input type="text" name="usuario"><br>
+        <label>Password</label><br>
+        <input type="password" name="password"><b><br>
+        <input type="Submit" name="login" value="Login">
+</form>

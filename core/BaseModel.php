@@ -38,7 +38,7 @@ abstract class BaseModel {
         return $this->$atributo;
     }
 
-    public function read(array $campos_values, $campos = "*", $where = null) {
+    public function read($campos = "*", $where = null) {
         try {           
 
             $where_sql = empty($where) ? "" : "WHERE " . $where;
