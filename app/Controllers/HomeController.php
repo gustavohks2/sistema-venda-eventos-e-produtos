@@ -8,7 +8,6 @@ class HomeController extends BaseController {
     public function index(){
         $this->view->nome = 'wesllen';
         $this->Render('home/index');
-//        require_once __DIR__.'/../Views/home/index.phtml';
     }
     
     public function login(){

@@ -1,2 +1,53 @@
-<h1>Pagina Home</h1><br>
-nome: <?= $this->view->nome ?>
+<!-- TODO: Jogar layout padrão em outro arquivo para reutilização -->
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <!-- Meta tags - informações de configuração da página -->
+      <meta charset="UTF-8">
+      <meta name="robots" content="index, follow">
+      <meta http-equiv="X-UA-Compatible" content="ie-edge">
+      <meta name="description" content="Alterar descrição">
+      <meta name="author" content="Lucas, Gustavo, Wesllen">
+      <meta name="viewport" content="width=device-width, intial-scale=1.0">
+      <!-- Tags relacionadas ao estilo - Fontes e Ícones -->
+      <link rel="stylesheet" href="css/linea-basic/styles.css">
+      <link rel="stylesheet" href="css/linea-ecommerce/styles.css">
+      <!-- Tags relacionadas ao estilo - Internas -->
+      <link rel="stylesheet" href="css/style.css">
+
+      <title>Home</title>
+   </head>
+   <body>
+      <!--------------------------- Header ---------------------------->
+      <header class="header">
+         <!------------------------ Navbar ---------------------------->
+         <nav class="header__navbar">
+            <h3 class="header__brand">
+               <img class="header__logo" src="#" alt="-">
+               Brand
+            </h3>
+            <ul class="header__nav">
+               <li><a href="#">Home</a></li>
+               <li><a href="#">Produtos</a></li>
+               <li><a href="#">Sobre</a></li>
+               <li><a href="#">Contato</a></li>
+            </ul>
+            <div class="header__box-option">
+               <i class="header__cart-icon icon-ecommerce-cart"></i>
+            </div>
+         </nav>
+         <!------------------- Slideshow Produtos -------------------->
+         <section class="slider">
+            <div class="slider__slide js-slide"></div>
+            <div class="slider__slide js-slide"></div>
+            <div class="slider__slide js-slide"></div>
+         </section>
+      </header>
+      <!--------------------------- Main ---------------------------->
+      <div class="main" role="Main">
+         <section class="section-produtos">
+            
+         </section>
+      </div>
+   </body>
+</html>
