@@ -19,27 +19,4 @@ class Container {
         $Objcontroller =  "App\\Controllers\\" . $controller;
         return new $Objcontroller;
     }
-    
-    public static function pageNotFoundRota(){
-        if(file_exists(__DIR__.'/../app/Views/404/rota-404.phtml')){
-            return require __DIR__.'/../app/Views/404/rota-404.phtml';
-        }else{
-            echo 'Erro404: page not found';
-        }
-    }
-    
-    public static function pageNotFoundLayout(){
-        if(file_exists(__DIR__.'/../app/Views/404/layout-404.phtml')){
-            return require __DIR__.'/../app/Views/404/layout-404.phtml';
-        }else{
-            echo 'Erro404: page not found';
-        }
-    }
-    public static function pageNotFoundView(){
-        if(file_exists(__DIR__.'/../app/Views/404/view-404.phtml')){
-            return require __DIR__.'/../app/Views/404/view-404.phtml';
-        }else{
-            echo 'Erro404: page not found';
-        }
-    }
 }
