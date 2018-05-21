@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/gustavohks2/sistema-venda-eventos-e-produtos#readme",
   "devDependencies": {
+    "flag": "^3.0.0-1",
     "node-sass": "^4.9.0"
   },
   "dependencies": {
