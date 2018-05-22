@@ -16,6 +16,14 @@ use Core\Session;
 class Login extends BaseModel {
     protected $tabela = "usuario";
     
+    public function isNull($dados){        
+        if(($dados->usuario === "") || ($dados->password === "")){
+            return TRUE;
+        }else{
+            return False;
+        }
+    }
+    
     public function verificarlogin($dados){
         $senha = md5($dados->password);
         $verificar = $this->read("*", "login = '{$dados->usuario}' and senha = '{$senha}';");
