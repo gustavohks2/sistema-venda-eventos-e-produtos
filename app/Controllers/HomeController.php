@@ -17,13 +17,6 @@ class HomeController extends BaseController {
 
     }
     
-    public function login(){
-        //seta o titulo da pagina
-        $this->setPageTitle("Login");
-        //renderiza a pagina e o layout
-        $this->Render("home/login", 'layoutHome'); 
-    }
-    
     public function validarLogin($request){
         $login = new Login();
         //verifica se existe o usuario digitado se sim retorna TRUE

@@ -1,7 +1,4 @@
-<?php
-session_start();
-?>
-<!-- TODO: Jogar layout padrão em outro arquivo para reutilização -->
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
    <head>
@@ -21,8 +18,42 @@ session_start();
       <title><?php $this->getPageTitle('| SVEP')?></title>
    </head>
    <body>
-        <!--Conteudo-->
-        <?php $this->content()?>
-        <!--Fim Conteudo-->        
-    </body>
+      <!--------------------------- Header ---------------------------->
+      <div class="form-popup" style="display: none;">
+         <form class="login-form" action="/login/verificar" method="POST">
+            <div class="login-form__control-group">
+               <label class="login-form__label">Usuário</label>
+               <input class="login-form__input" type="text" name="usuario">
+            </div>
+            <div class="login-form__control-group">
+               <label class="login-form__label">Password</label>
+               <input class="login-form__input" type="password" name="password">
+            </div>
+            <button class="btn btn--blue" type="submit">Entrar</button>
+         </form>
+      </div>
+      <!--------------------------- Header ---------------------------->
+      <header class="header">
+         <!------------------------ Navbar ---------------------------->
+         <nav class="header__navbar">
+            <h3 class="header__brand">
+               <img class="header__logo" src="#" alt="-">
+               Brand
+            </h3>
+            <ul class="header__nav">
+               <li><a class="active" href="#">Home</a></li><!--
+               --><li><a href="#">Produtos</a></li><!--
+               --><li><a href="#">Sobre</a></li><!--
+               --><li><a href="#">Contato</a></li>
+            </ul>
+            <div class="header__box-option">
+               <i class="header__cart-icon icon-ecommerce-cart"></i>
+            </div>
+         </nav>
+      </header>
+   <?php echo isset($_SESSION["erro"]) ? $_SESSION['erro'] : "" ?>
+      <!--Conteudo-->
+      <?php $this->content()?>
+      <!--Fim Conteudo-->        
+   </body>
 </html>

@@ -19,3 +19,46 @@ img, video {
 
 ul, li {
   list-style: none; }
+
+.header {
+  height: 9rem;
+  background-color: #fff;
+  box-shadow: 0.2rem 0 0.1rem rgba(0, 0, 0, 0.4); }
+  .header__navbar {
+    height: 100%; }
+    .header__navbar::after {
+      content: "";
+      clear: both;
+      display: table; }
+    .header__navbar > * {
+      height: 100%; }
+  .header__brand {
+    float: left;
+    display: block;
+    width: 9rem; }
+  .header__nav {
+    float: left;
+    width: calc(100% - (2 * 9rem));
+    text-align: center; }
+    .header__nav li {
+      display: inline-block;
+      height: 100%; }
+      .header__nav li a {
+        height: 100%;
+        display: block;
+        padding: 0 3rem;
+        font-size: 1.5rem;
+        line-height: 9rem;
+        text-decoration: none;
+        color: #0471d8; }
+      .header__nav li a.active {
+        border-bottom: 3px solid #0471d8; }
+  .header__box-option {
+    float: right;
+    width: 9rem;
+    font-size: 3rem;
+    cursor: pointer;
+    text-align: center;
+    line-height: 10rem;
+    color: #ffffff;
+    background-color: #0471d8; }
