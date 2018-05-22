@@ -15,20 +15,17 @@ class HomeController extends BaseController {
         //renderiza a pagina e o layout
         $this->Render('home/index', 'layoutHome');
     }
-<<<<<<< HEAD
-    
-    public function validarLogin($request){
-=======
 
-    public function login() {
-        //seta o titulo da pagina
-        $this->setPageTitle("Login");
-        //renderiza a pagina e o layout
-        $this->Render("home/login", 'layoutHome');
-    }
+//
+//    public function login() {
+//        //seta o titulo da pagina
+//        $this->setPageTitle("Login");
+//        //renderiza a pagina e o layout
+//        $this->Render("home/login", 'layoutHome');
+//    }
 
     public function validarLogin($request) {
->>>>>>> 4e4ad23d73e8af30505dd70947e0d1bdfaebf519
+
         $login = new Login();
 
 
