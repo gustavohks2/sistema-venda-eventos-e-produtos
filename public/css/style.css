@@ -40,6 +40,99 @@ ul, li {
    background-image: linear-gradient(to right bottom, rgba(0, 242, 96, .7), rgba(5, 117, 230, .7));
 }
 */
+.popup.active {
+  opacity: 1;
+  visibility: visible; }
+
+.popup__overlay {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  position: fixed;
+  visibility: hidden;
+  background-image: linear-gradient(226deg, rgba(62, 62, 62, 0.88) 0, rgba(0, 0, 0, 0.85) 100%); }
+
+.popup__close-btn {
+  position: absolute;
+  top: 5rem;
+  right: 4rem;
+  width: 3.5rem;
+  cursor: pointer;
+  transition: transform 200ms ease-in-out; }
+  .popup__close-btn:hover {
+    transform: scale(1.1); }
+  .popup__close-btn::before, .popup__close-btn::after {
+    content: "";
+    top: 0;
+    width: 100%;
+    height: .8rem;
+    position: absolute;
+    background-color: #ffffff; }
+  .popup__close-btn::before {
+    transform: rotate(-135deg); }
+  .popup__close-btn::after {
+    transform: rotate(135deg); }
+
+.popup__container {
+  max-width: 80rem;
+  max-height: 50rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.login-form {
+  width: 60rem;
+  padding: 6rem;
+  background-color: #ffffff; }
+  .login-form__control-group {
+    margin-bottom: 2rem; }
+  .login-form__label {
+    float: left;
+    width: 10rem;
+    display: block;
+    text-align: right;
+    margin-right: 2rem;
+    font-size: 1.6rem;
+    line-height: 4.5rem; }
+  .login-form__input {
+    height: 5rem;
+    padding: 0 2rem;
+    font-size: 1.5rem;
+    color: #7e7e7e;
+    background-color: #ffffff;
+    width: calc(90% - 10rem - 2rem);
+    border: 2px solid #d1d1d1; }
+  .login-form__button {
+    border: none;
+    height: 5rem;
+    display: block;
+    cursor: pointer;
+    margin-left: 12rem;
+    color: #ffffff;
+    width: calc(90% - 10rem - 2rem);
+    background-color: #0471d8;
+    transition: background-color 200ms linear; }
+    .login-form__button:hover {
+      background-color: #035cb0; }
+  .login-form__link {
+    display: block;
+    margin-left: 12rem;
+    text-align: center;
+    margin-top: 2rem;
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #0471d8;
+    width: calc(90% - 10rem - 2rem); }
+  .login-form__message {
+    font-size: 1.6rem;
+    color: #eb084c;
+    margin-bottom: 2rem;
+    display: inline-block;
+    margin-left: 12rem;
+    width: calc(90% - 10rem - 2rem); }
+
 .header {
   height: 9rem;
   background-color: #fff;

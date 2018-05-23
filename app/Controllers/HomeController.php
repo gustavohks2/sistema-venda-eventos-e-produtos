@@ -37,11 +37,11 @@ class HomeController extends BaseController {
                 $this->redirect("admin");
             } else {
                 //Seto a pagina que vai ser redirecionada e se eu quizer passo uma menssagem via session
-                $this->redirect("login", "Usuario Invalido");
+                $this->redirect("", "Usuário Inválido");
             }
         } else {
             //Seto a pagina que vai ser redirecionada e se eu quizer passo uma menssagem via session
-            $this->redirect("login", "Por favor preencha todos os campos", "/login");
+            $this->redirect("", "Por favor, preencha todos os campos");
         }
     }
 

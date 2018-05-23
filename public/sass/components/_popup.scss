@@ -1,0 +1,52 @@
+.popup {
+   &.active {
+      opacity: 1;
+      visibility: visible;
+   }
+
+   &__overlay {
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      position: fixed;
+      visibility: hidden;
+
+      background-image: 
+      linear-gradient(226deg,
+      rgba($color-gray-dark, .88) 0, 
+            rgba($color-black, .85) 100%);
+   }
+
+   &__close-btn {
+      position: absolute;
+      top: 5rem;
+      right: 4rem;
+      width: $close-btn-size;
+      cursor: pointer;
+      transition: transform 200ms ease-in-out;
+
+      &:hover {
+         transform: scale(1.1);
+      }
+
+      &::before, &::after {
+         content: "";
+
+         top: 0;
+         width: 100%;
+         height: .8rem;
+         position: absolute;
+         background-color: $color-white;
+      }
+
+      &::before { transform: rotate(-135deg); }
+      &::after { transform: rotate(135deg); }
+   }
+
+   &__container {
+      max-width: 80rem;
+      max-height: 50rem;
+      @include position-center;
+   }
+}

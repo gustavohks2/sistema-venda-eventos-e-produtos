@@ -24,17 +24,22 @@
    </head>
    <body>
       <!--------------------------- Header ---------------------------->
-      <div class="form-popup" style="display: none;">
-         <form class="login-form" action="/login/verificar" method="POST">
+      <div class="popup popup__overlay js-popup">
+         <span class="popup__close-btn js-login-close"></span>
+         <form class="popup__container login-form" action="/login/verificar" method="POST">
             <div class="login-form__control-group">
                <label class="login-form__label">Usuário</label>
                <input class="login-form__input" type="text" name="usuario">
             </div>
             <div class="login-form__control-group">
-               <label class="login-form__label">Password</label>
+               <label class="login-form__label">Senha</label>
                <input class="login-form__input" type="password" name="password">
             </div>
-            <button class="btn btn--blue" type="submit">Entrar</button>
+            <span class="login-form__message">
+               <?php echo isset($_SESSION["erro"]) ? $_SESSION['erro'] : "" ?>
+            </span>
+            <button class="login-form__button btn--blue" type="submit">Entrar</button>
+            <a href="/cadastro" class="login-form__link" type="submit">Registrar-se</a>
          </form>
       </div>
       <!--------------------------- Header ---------------------------->
@@ -53,12 +58,11 @@
             <div class="header__box-option header__box-option--1">
                <i class="header__cart-icon icon-ecommerce-cart"></i>
             </div>
-            <div class="header__box-option header__box-option--2">
+            <div class="header__box-option header__box-option--2 js-login-open">
                <span class="header__box-text">Login</span>
             </div>
          </nav>
       </header>
-      <?php echo isset($_SESSION["erro"]) ? $_SESSION['erro'] : "" ?>
       <!--Conteudo-->
       <?php $this->content()?>
       <!--Fim Conteudo-->        

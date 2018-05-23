@@ -5,7 +5,7 @@
          "dbname" => "SVEP",
          "host" => "localhost",
          "username" => "root",
-         "password" => "",
+         "password" => "gustavo",
          "charset" => "utf8",
          "collation" => "utf8_unicode_ci"
         ]
