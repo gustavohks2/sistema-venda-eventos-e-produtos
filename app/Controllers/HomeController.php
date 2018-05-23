@@ -36,12 +36,17 @@ class HomeController extends BaseController {
                 //se existe usuario chama o metodo que redireciona para a pagina especificada
                 $this->redirect("admin");
             } else {
+        /*  1: success               
+            2: info                
+            3: warning 
+            4: danger
+          */
                 //Seto a pagina que vai ser redirecionada e se eu quizer passo uma menssagem via session
-                $this->redirect("", "Usuário Inválido");
+                $this->redirect("index", "4", "Usuário Inválido");
             }
         } else {
             //Seto a pagina que vai ser redirecionada e se eu quizer passo uma menssagem via session
-            $this->redirect("", "Por favor, preencha todos os campos");
+            $this->redirect("login", "2", "Por favor, preencha todos os campos");
         }
     }
 
@@ -62,8 +67,14 @@ class HomeController extends BaseController {
             //Apresenta a mensagem de cadastro efetuado com sucesso
             echo 'Cadastrado com Sucesso';
         } else {
+        /*  1: success               
+            2: info                
+            3: warning 
+            4: danger
+          */
             //Apresenta a mensagem de erro ao tentar cadastrar
-            echo 'OPS algo deu errado no seu cadastro';
+            $this->redirect("cadastro", "4", "OPS algo deu errado no seu cadastro");
+            
         }
     }
 
