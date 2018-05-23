@@ -49,8 +49,8 @@ class BaseController {
     }
 
     protected function layout() {
-        if (file_exists(__DIR__ . "/../app/Views/tamplate/{$this->layoutPath}.phtml")) {
-            require_once __DIR__ . "/../app/Views/tamplate/{$this->layoutPath}.phtml";
+        if (file_exists(__DIR__ . "/../app/Views/template/{$this->layoutPath}.phtml")) {
+            require_once __DIR__ . "/../app/Views/template/{$this->layoutPath}.phtml";
         } else {
             Container::pageNotFoundLayout();
         }
