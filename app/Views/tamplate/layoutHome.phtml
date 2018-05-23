@@ -8,12 +8,17 @@
       <meta http-equiv="X-UA-Compatible" content="ie-edge">
       <meta name="description" content="Alterar descrição">
       <meta name="author" content="Lucas, Gustavo, Wesllen">
-      <meta name="viewport" content="width=device-width, intial-scale=1.0">
+      <meta name="viewport" content="width=device-width, intial-scale=1">
       <!-- Tags relacionadas ao estilo - Fontes e Ícones -->
       <link rel="stylesheet" href="css/linea-basic/styles.css">
       <link rel="stylesheet" href="css/linea-ecommerce/styles.css">
+      <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"> 
       <!-- Tags relacionadas ao estilo - Internas -->
       <link rel="stylesheet" href="css/style.css">
+      <!-- Scripts Javascript -->
+      <script src="node_modules/jquery/dist/jquery.min.js"></script>
+      <script src="node_modules/simple-slider/dist/simpleslider.min.js"></script>
+      <script src="js/app.js"></script>
 
       <title><?php $this->getPageTitle('| SVEP')?></title>
    </head>
@@ -37,8 +42,7 @@
          <!------------------------ Navbar ---------------------------->
          <nav class="header__navbar">
             <h3 class="header__brand">
-               <img class="header__logo" src="#" alt="-">
-               Brand
+               <img class="header__logo" src="img/cake.svg" alt="-">
             </h3>
             <ul class="header__nav">
                <li><a class="active" href="#">Home</a></li><!--
@@ -46,12 +50,15 @@
                --><li><a href="#">Sobre</a></li><!--
                --><li><a href="#">Contato</a></li>
             </ul>
-            <div class="header__box-option">
+            <div class="header__box-option header__box-option--1">
                <i class="header__cart-icon icon-ecommerce-cart"></i>
+            </div>
+            <div class="header__box-option header__box-option--2">
+               <span class="header__box-text">Login</span>
             </div>
          </nav>
       </header>
-   <?php echo isset($_SESSION["erro"]) ? $_SESSION['erro'] : "" ?>
+      <?php echo isset($_SESSION["erro"]) ? $_SESSION['erro'] : "" ?>
       <!--Conteudo-->
       <?php $this->content()?>
       <!--Fim Conteudo-->        

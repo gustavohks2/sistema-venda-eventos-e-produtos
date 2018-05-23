@@ -2,10 +2,12 @@ const module = (function() {
 
    DOMElements = {
       // Elementos do modelo de objetos do documento - DOM
+      
    }
 
    const init = function() {
-      console.log("Aplicação iniciada!");
+      //Inicia Slider
+      simpleslider.getSlider();
    }
 
    return {
@@ -13,4 +15,6 @@ const module = (function() {
    }
 })();
 
-module.init();
+$(document).ready(function() {
+   module.init();
+});

@@ -20,6 +20,26 @@ img, video {
 ul, li {
   list-style: none; }
 
+.slider {
+  width: 100%;
+  height: 40rem; }
+
+/*
+.slider img {
+   filter: grayscale(100%);
+}
+
+.slider::after {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 9999;
+   background-image: linear-gradient(to right bottom, rgba(0, 242, 96, .7), rgba(5, 117, 230, .7));
+}
+*/
 .header {
   height: 9rem;
   background-color: #fff;
@@ -32,13 +52,18 @@ ul, li {
       display: table; }
     .header__navbar > * {
       height: 100%; }
+  .header__logo {
+    height: 100%;
+    width: 5rem;
+    margin: 0 auto;
+    display: block; }
   .header__brand {
     float: left;
     display: block;
-    width: 9rem; }
+    width: 18rem; }
   .header__nav {
     float: left;
-    width: calc(100% - (2 * 9rem));
+    width: calc(100% - (2 * 9rem) - 18rem);
     text-align: center; }
     .header__nav li {
       display: inline-block;
@@ -47,10 +72,12 @@ ul, li {
         height: 100%;
         display: block;
         padding: 0 3rem;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         line-height: 9rem;
+        letter-spacing: 1px;
         text-decoration: none;
-        color: #0471d8; }
+        color: #0471d8;
+        font-family: "Dosis", sans-serif; }
       .header__nav li a.active {
         border-bottom: 3px solid #0471d8; }
   .header__box-option {
@@ -58,7 +85,15 @@ ul, li {
     width: 9rem;
     font-size: 3rem;
     cursor: pointer;
-    text-align: center;
-    line-height: 10rem;
-    color: #ffffff;
-    background-color: #0471d8; }
+    text-align: center; }
+    .header__box-option--1 {
+      color: #ffffff;
+      background-color: #0471d8;
+      line-height: 10rem; }
+    .header__box-option--2 {
+      color: #0471d8;
+      background-color: #ffffff; }
+  .header__box-text {
+    font-size: 1.8rem;
+    line-height: 9rem;
+    display: block; }
