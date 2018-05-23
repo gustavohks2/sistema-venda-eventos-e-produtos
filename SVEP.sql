@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 21-Maio-2018 às 13:02
+-- Generation Time: 23-Maio-2018 às 13:19
 -- Versão do servidor: 10.1.19-MariaDB
 -- PHP Version: 5.5.38
 
@@ -95,6 +95,15 @@ CREATE TABLE `endereco` (
   `logradouro` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `endereco`
+--
+
+INSERT INTO `endereco` (`idEndereco`, `cep`, `endereco`, `complemento`, `numero`, `bairro`, `cidade`, `uf`, `logradouro`) VALUES
+(1, '70645160', 'SRES ', 'green', '1614', 'Aguas claras', 'Brasilia', 'DF', 'apartamento'),
+(2, '70645160', 'SRES ', 'green', '1614', 'Aguas claras', 'Brasilia', 'DF', 'apartamento'),
+(3, '70645160', 'SRES', 'green', '1614', 'Aguas claras', 'Brasilia', 'Df', 'apartamento');
+
 -- --------------------------------------------------------
 
 --
@@ -182,6 +191,15 @@ CREATE TABLE `pessoa` (
   `fkEndereco` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `pessoa`
+--
+
+INSERT INTO `pessoa` (`idPessoa`, `nome`, `cpf`, `rg`, `telefoneContato`, `email`, `fkEndereco`) VALUES
+(1, 'wesllen.sousa', '0323094414', '3971735', '618755', 'wesllenalves@gmail.com', 1),
+(2, 'wesllen.sousa', '0323094414', '3971735', '618755', 'wesllenalves@gmail.com', 2),
+(3, 'wesllen alves teste de cadastro', '03230944143', '2971735', '61981745695', 'wesllenalves@gmail.com', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -212,6 +230,15 @@ CREATE TABLE `usuario` (
   `nivel` tinyint(4) NOT NULL,
   `fkPessoa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`idusuario`, `login`, `senha`, `nivel`, `fkPessoa`) VALUES
+(1, 'wesllenalves', 'd41d8cd98f00b204e9800998ecf8427e', 1, 1),
+(2, 'wesllenalves', 'cb7e8bbed60ae4f8eb6280585fec071f', 1, 2),
+(3, 'wesllenalves', '053ae2bc4ef8b6c108173d7a728ed5d5', 1, 3);
 
 --
 -- Indexes for dumped tables
@@ -319,7 +346,7 @@ ALTER TABLE `certificadosemitidos`
 -- AUTO_INCREMENT for table `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `idEndereco` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEndereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `estoque`
 --
@@ -344,12 +371,17 @@ ALTER TABLE `pedido`
 -- AUTO_INCREMENT for table `pessoa`
 --
 ALTER TABLE `pessoa`
-  MODIFY `idPessoa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPessoa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `produto`
 --
 ALTER TABLE `produto`
   MODIFY `idProduto` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
@@ -397,13 +429,13 @@ ALTER TABLE `pedidoproduto`
 -- Limitadores para a tabela `pessoa`
 --
 ALTER TABLE `pessoa`
-  ADD CONSTRAINT `fk_pessoa_endereco1` FOREIGN KEY (`fkEndereco`) REFERENCES `endereco` (`idEndereco`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_pessoa_endereco1` FOREIGN KEY (`fkEndereco`) REFERENCES `endereco` (`idEndereco`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `usuario`
 --
 ALTER TABLE `usuario`
-  ADD CONSTRAINT `fk_usuario_pessoa1` FOREIGN KEY (`fkPessoa`) REFERENCES `pessoa` (`idPessoa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_usuario_pessoa1` FOREIGN KEY (`fkPessoa`) REFERENCES `pessoa` (`idPessoa`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

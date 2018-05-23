@@ -1,0 +1,65 @@
+.form {
+   width: 45rem;  
+   margin: 0 auto;
+
+   &__group {
+      width: 100%;
+      height: 5rem;
+      position: relative;
+      margin-bottom: 3rem;
+   }
+
+   &__label {
+      left: 2rem;
+      bottom: 1.4rem;
+      font-size: 1.6rem;
+      position: absolute;
+      letter-spacing: 1px;
+      transition: all .15s linear;
+      color: $color-gray-light-2;
+   }
+
+   &__control {
+      width: 100%;
+      height: 100%;
+      border: none;
+      font-weight: 300;
+      font-size: 1.55rem;
+      position: relative;
+      padding: .5rem 2rem;
+      color: $color-gray-light-2;
+      background-color: $color-white;
+   }
+
+   &__border-bottom {
+      position: absolute;
+      bottom: -2px;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: lighten($color-gray-light, 2%);
+
+      &::before, &::after {
+         content: "";
+         height: 2px;
+         width: 0;
+         top: 0;
+         position: absolute;
+         background: $color-primary;
+         transition: all .15s linear;
+      }
+
+      &::before { left: 50%; }
+      &::after { right: 50%; }
+   }
+
+   &__control:focus + &__label {
+      transform: translateY(-3rem);
+      font-size: 1.4rem;
+   }
+
+   &__control:focus ~ &__border-bottom {
+      &::before { width: 50%; }
+      &::after { width: 50%; }
+   }
+}

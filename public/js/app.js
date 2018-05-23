@@ -5,13 +5,24 @@ $(document).ready(function() {
    DOM = {
       popup: $(".popup"),
       loginOpen: $(".js-login-open"),
-      loginClose: $(".js-login-close")
+      loginClose: $(".js-login-close"),
+      inputs: {
+         CEP: $("[data-input='CEP']"),
+         CPF: $("[data-input='CPF']"),
+         telefone: $("[data-input='telefone']")
+      }
    }
 
    const bindEvents = function() {
       DOM.loginOpen.click(openLoginPopup);
       DOM.loginClose.click(closeLoginPopup);
       $(document).on("keyup", closeLoginPopupKeyboard);
+   }
+
+   const bindMasks = function() {
+      DOM.inputs.CEP.mask("00000-000");
+      DOM.inputs.CPF.mask("000.000.000-00");
+      DOM.inputs.telefone.mask("(00) 0000-0000");
    }
 
    const openLoginPopup = function() {
@@ -35,6 +46,7 @@ $(document).ready(function() {
 
    const init = function() {
       bindEvents();
+      bindMasks();
       //Inicia Slider
       simpleslider.getSlider();
    }

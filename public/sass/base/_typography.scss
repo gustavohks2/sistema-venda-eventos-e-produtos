@@ -1,0 +1,11 @@
+.heading {
+   font-size: 4rem;
+   text-transform: uppercase;
+   letter-spacing: 3px;
+   word-spacing: 5px;
+
+   &--primary {
+      color: lighten($color-primary, 10%);
+      text-shadow: 0 0 .8rem rgba($color-black, .15);
+   }
+}

@@ -40,6 +40,42 @@ ul, li {
    background-image: linear-gradient(to right bottom, rgba(0, 242, 96, .7), rgba(5, 117, 230, .7));
 }
 */
+.heading {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  word-spacing: 5px; }
+  .heading--primary {
+    color: #148bfb;
+    text-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.15); }
+
+.u-margin-top-huge {
+  margin-top: 8rem !important; }
+
+.u-margin-top-big {
+  margin-top: 6rem !important; }
+
+.u-margin-top-med {
+  margin-top: 4rem !important; }
+
+.u-margin-top-sml {
+  margin-top: 2rem !important; }
+
+.u-margin-bottom-huge {
+  margin-bottom: 8rem !important; }
+
+.u-margin-bottom-big {
+  margin-bottom: 6rem !important; }
+
+.u-margin-bottom-med {
+  margin-bottom: 4rem !important; }
+
+.u-margin-bottom-sml {
+  margin-bottom: 2rem !important; }
+
+.u-text-center {
+  text-align: center !important; }
+
 .popup.active {
   opacity: 1;
   visibility: visible; }
@@ -190,3 +226,56 @@ ul, li {
     font-size: 1.8rem;
     line-height: 9rem;
     display: block; }
+
+.form {
+  width: 45rem;
+  margin: 0 auto; }
+  .form__group {
+    width: 100%;
+    height: 5rem;
+    position: relative;
+    margin-bottom: 3rem; }
+  .form__label {
+    left: 2rem;
+    bottom: 1.4rem;
+    font-size: 1.6rem;
+    position: absolute;
+    letter-spacing: 1px;
+    transition: all .15s linear;
+    color: #7e7e7e; }
+  .form__control {
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-weight: 300;
+    font-size: 1.55rem;
+    position: relative;
+    padding: .5rem 2rem;
+    color: #7e7e7e;
+    background-color: #ffffff; }
+  .form__border-bottom {
+    position: absolute;
+    bottom: -2px;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #d6d6d6; }
+    .form__border-bottom::before, .form__border-bottom::after {
+      content: "";
+      height: 2px;
+      width: 0;
+      top: 0;
+      position: absolute;
+      background: #0471d8;
+      transition: all .15s linear; }
+    .form__border-bottom::before {
+      left: 50%; }
+    .form__border-bottom::after {
+      right: 50%; }
+  .form__control:focus + .form__label {
+    transform: translateY(-3rem);
+    font-size: 1.4rem; }
+  .form__control:focus ~ .form__border-bottom::before {
+    width: 50%; }
+  .form__control:focus ~ .form__border-bottom::after {
+    width: 50%; }
