@@ -28,19 +28,8 @@
    }
 
    &__button {
-      border: none;
-      height: 5rem;
-      display: block;
-      cursor: pointer;
       margin-left: 12rem;
-      color: $color-white;
       width: calc(90% - 10rem - 2rem);
-      background-color: $color-primary;
-      transition: background-color 200ms linear;
-
-      &:hover {
-         background-color: darken($color-primary, 8%);
-      }
    }
 
    &__link {

@@ -1,0 +1,15 @@
+.btn {
+   width: 25rem;
+   border: none;
+   height: 5rem;
+   cursor: pointer;
+   display: inline-block;
+
+   &--blue {
+      color: $color-white;
+      background-color: $color-primary;
+      transition: background-color 200ms linear;
+
+      &:hover { background-color: darken($color-primary, 8%); }
+   }
+}
