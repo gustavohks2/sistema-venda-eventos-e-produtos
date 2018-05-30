@@ -6,7 +6,7 @@
    "authors": [
       {"name": "Gustavo Henrique", "email": "gustavohks2@gmail.com"},
       {"name": "Wesllen", "email": "wesllenalves@gmail.com"},
-      {"name": "Luacas", "email": "emailaqui@mail.com"}
+      {"name": "Lucas", "email": "emailaqui@mail.com"}
    ],
    "autoload": {
       "psr-4": {

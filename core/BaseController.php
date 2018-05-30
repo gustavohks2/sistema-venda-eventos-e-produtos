@@ -9,7 +9,6 @@
 namespace Core;
 
 use Core\Session;
-
 /**
  * Description of BaseController
  *
@@ -79,8 +78,8 @@ class BaseController {
         $this->redirect = $redirect;
         $this->tipo = $tipo;
         $this->mensagem = $mensagem;
-        $this->getRedirect() === TRUE ?: Container::pageNotFoundLayout();
         $this->setSession();
+        $this->getRedirect() === TRUE ?: Container::pageNotFoundLayout();
     }
 
     protected function getRedirect() {
@@ -100,8 +99,8 @@ class BaseController {
                 break;
             case 4: $data->danger = $this->mensagem;
                 break;
-            
         }
+        
     }
 
 }

@@ -30,7 +30,6 @@ class HomeController extends BaseController {
 
 
         if ($login->isNull($request->post) === FALSE) {
-
             //verifica se existe o usuario digitado, se sim retorna TRUE
             if ($login->verificarlogin($request->post)) {
                 //se existe usuario chama o metodo que redireciona para a pagina especificada
@@ -46,7 +45,7 @@ class HomeController extends BaseController {
             }
         } else {
             //Seto a pagina que vai ser redirecionada e se eu quizer passo uma menssagem via session
-            $this->redirect("login", "2", "Por favor, preencha todos os campos");
+            $this->redirect("index", "2", "Por favor, preencha todos os campos");
         }
     }
 
