@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use Core\Session;
 use Core\BaseController;
 use App\Models\Login;
 use App\Models\Cadastro;
@@ -25,7 +26,6 @@ class HomeController extends BaseController {
 //    }
 
     public function validarLogin($request) {
-
         $login = new Login();
 
 
@@ -33,7 +33,11 @@ class HomeController extends BaseController {
             //verifica se existe o usuario digitado, se sim retorna TRUE
             if ($login->verificarlogin($request->post)) {
                 //se existe usuario chama o metodo que redireciona para a pagina especificada
-                $this->redirect("admin");
+                $session = Session::getInstance();
+                echo json_encode([
+                    "success" => true,
+                    "nivel" => $session->nivel
+                ]);
             } else {
         /*  1: success               
             2: info                
@@ -41,11 +45,17 @@ class HomeController extends BaseController {
             4: danger
           */
                 //Seto a pagina que vai ser redirecionada e se eu quizer passo uma menssagem via session
-                $this->redirect("index", "4", "Usuário Inválido");
+                echo json_encode([
+                    "success" => false,
+                    "message" => "Usuário Inválido!"
+                ]);
             }
         } else {
             //Seto a pagina que vai ser redirecionada e se eu quizer passo uma menssagem via session
-            $this->redirect("index", "2", "Por favor, preencha todos os campos");
+            echo json_encode([
+                "success" => false,
+                "message" => "Por favor, preencha todos os campos!"
+            ]);
         }
     }
 

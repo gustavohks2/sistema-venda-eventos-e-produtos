@@ -27,18 +27,16 @@
       <!--------------------------- Header ---------------------------->
       <div class="popup popup__overlay js-popup">
          <span class="popup__close-btn js-login-close"></span>
-         <form class="popup__container login-form" action="/login/verificar" method="POST">
+         <form class="popup__container login-form js-login-form" action="/login/verificar" method="POST">
             <div class="login-form__control-group">
                <label class="login-form__label">Usuário</label>
-               <input class="login-form__input" type="text" name="usuario">
+               <input class="login-form__input js-input-user" type="text" name="usuario">
             </div>
             <div class="login-form__control-group">
                <label class="login-form__label">Senha</label>
-               <input class="login-form__input" type="password" name="password">
+               <input class="login-form__input js-input-psw" type="password" name="password">
             </div>
-            <span class="login-form__message">
-               <?php FlashMessage::show(); ?>
-            </span>
+            <span class="login-form__message js-login-form-message"></span>
             <button class="btn btn--blue login-form__button" type="submit">Entrar</button>
             <a href="/cadastro" class="login-form__link" type="submit">Registrar-se</a>
          </form>
@@ -66,6 +64,39 @@
       </header>
       <!--Conteudo-->
       <?php $this->content() ?>
-      <!--Fim Conteudo-->        
+      <!--Fim Conteudo-->
+      <script>
+         $(document).ready(function() {
+            const $loginForm = $(".js-login-form"),
+                  $formMessage = $(".js-login-form-message"),
+                  inputs = {
+                     user: $(".js-input-user"),
+                     password: $(".js-input-psw")
+                  };
+
+
+            const handleFormData = function(e) {
+               e.preventDefault();
+
+               $.ajax({
+                  type: "POST",
+                  url: "/login/verificar",
+                  data: $(this).serialize(),
+                  success: function(data) { handleUserLogin($.parseJSON(data)); },
+                  error: function(jqXhr, textStatus, errorThrown) { $formMessage.text("Erro: Não foi possível fazer login!") }
+               });
+            }
+
+            const handleUserLogin = function(login) {
+               if (!login.success) 
+                  $formMessage.text(login.message ? login.message : "");
+
+               if (parseInt(login.nivel) === 1) location.reload();
+               else if (parseInt(login.nivel) === 2) location.href = "/admin";
+            }
+
+            $loginForm.on("submit", handleFormData);
+         });
+      </script>
    </body>
 </html>

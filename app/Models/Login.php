@@ -25,16 +25,17 @@ class Login extends BaseModel {
     }
     
     public function verificarlogin($dados){
-        $senha = md5($dados->password);
-        $verificar = $this->read("*", "login = '{$dados->usuario}' and senha = '{$senha}';");
-        if (count($verificar) > 0) {
-            $login = $verificar[0]->login;
-            $id = $verificar[0]->idusuario;
+        $dados->password = md5($dados->password);
+        $usuario = $this->read("*", "login = '{$dados->usuario}' and senha = '{$dados->password}';");
+        if (count($usuario) > 0) {
+            $login = $usuario[0]->login;
+            $nivel = $usuario[0]->nivel;
+            $id = $usuario[0]->idusuario;
            
-            
             $data = Session::getInstance();
             $data->authenticado = TRUE;
             $data->login = $login;
+            $data->nivel = $nivel;
             $data->id = $id;         
             return TRUE;
         }
