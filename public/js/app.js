@@ -4,8 +4,12 @@ $(document).ready(function() {
    DOM = {
       popup: $(".popup"),
       loginOpen: $(".js-login-open"),
+      loginForm : $(".js-login-form"),
       loginClose: $(".js-login-close"),
+      formMessage : $(".js-login-form-message"),
       inputs: {
+         user: $(".js-input-user"),
+         password: $(".js-input-psw"),
          CEP: $("[data-input='CEP']"),
          CPF: $("[data-input='CPF']"),
          telefone: $("[data-input='telefone']")
@@ -13,8 +17,9 @@ $(document).ready(function() {
    }
 
    const bindEvents = function() {
-      DOM.loginOpen.click(openLoginPopup);
-      DOM.loginClose.click(closeLoginPopup);
+      DOM.loginForm.on("submit", handleFormData);
+      DOM.loginOpen.on("click", openLoginPopup);
+      DOM.loginClose.on("click", closeLoginPopup);
       $(document).on("keyup", closeLoginPopupKeyboard);
    }
 
@@ -41,6 +46,34 @@ $(document).ready(function() {
             DOM.popup.removeClass("active");
          }
       }
+   }
+
+   const handleFormData = function(e) {
+      e.preventDefault();
+
+      $.ajax({
+         type: "POST",
+         url: "/login/verificar",
+         data: $(this).serialize(),
+         success: function(data) { handleUserLogin($.parseJSON(data)); },
+         error: function(jqXhr, textStatus, errorThrown) { showMessage("Erro: Não foi possível fazer login!") }
+      });
+   }
+
+   const handleUserLogin = function(login) {
+      DOM.formMessage.text("");
+
+      if (!login.success) 
+         showMessage(login.message ? login.message : "");
+
+      if (parseInt(login.nivel) === 1) location.reload();
+      else if (parseInt(login.nivel) === 2) location.href = "/admin";
+   }
+
+   const showMessage = function(message) {
+      DOM.formMessage.text(message);
+      DOM.formMessage.addClass("shake");
+      setTimeout(function() { DOM.formMessage.removeClass("shake"); }, 310);
    }
 
    const init = function() {

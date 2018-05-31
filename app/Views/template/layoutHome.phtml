@@ -49,7 +49,7 @@
                <img class="header__logo" src="img/cake.svg" alt="-">
             </h3>
             <ul class="header__nav">
-               <li><a class="active" href="#">Home</a></li><!--
+               <li><a class="active" href="/">Home</a></li><!--
                --><li><a href="#">Produtos</a></li><!--
                --><li><a href="#">Sobre</a></li><!--
                --><li><a href="#">Contato</a></li>
@@ -65,44 +65,8 @@
       <!--Conteudo-->
       <?php $this->content() ?>
       <!--Fim Conteudo-->
-      <script>
-         $(document).ready(function() {
-            const $loginForm = $(".js-login-form"),
-                  $formMessage = $(".js-login-form-message"),
-                  inputs = {
-                     user: $(".js-input-user"),
-                     password: $(".js-input-psw")
-                  };
-
-
-            const handleFormData = function(e) {
-               e.preventDefault();
-
-               $.ajax({
-                  type: "POST",
-                  url: "/login/verificar",
-                  data: $(this).serialize(),
-                  success: function(data) { handleUserLogin($.parseJSON(data)); },
-                  error: function(jqXhr, textStatus, errorThrown) { showMessage("Erro: Não foi possível fazer login!") }
-               });
-            }
-
-            const handleUserLogin = function(login) {
-               if (!login.success) 
-                  showMessage(login.message ? login.message : "");
-
-               if (parseInt(login.nivel) === 1) location.reload();
-               else if (parseInt(login.nivel) === 2) location.href = "/admin";
-            }
-
-            const showMessage = function(message) {
-               $formMessage.text(message);
-               $formMessage.addClass("shake");
-               setTimeout(function() { $formMessage.removeClass("shake"); }, 310);
-            }
-
-            $loginForm.on("submit", handleFormData);
-         });
-      </script>
+      <?php
+         FlashMessage::show();
+      ?>
    </body>
 </html>

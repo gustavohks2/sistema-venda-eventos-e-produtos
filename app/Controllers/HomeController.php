@@ -27,6 +27,7 @@ class HomeController extends BaseController {
             if ($login->verificarlogin($request->post)) {
                 
                 $session = Session::getInstance();
+                $this->setSessionMessage(self::SUCCESS, "Logado com sucesso!");
                 echo json_encode([
                     "success" => true,
                     "nivel" => $session->nivel
@@ -66,7 +67,7 @@ class HomeController extends BaseController {
             echo 'Cadastrado com Sucesso';
         } else {
             //Apresenta a mensagem de erro ao tentar cadastrar
-            $this->redirect("cadastro", "4", "OPS algo deu errado no seu cadastro");
+            $this->redirect("cadastro", self::DANGER, "OPS algo deu errado no seu cadastro");
             
         }
     }

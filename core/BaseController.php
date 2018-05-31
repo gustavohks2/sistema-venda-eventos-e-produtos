@@ -25,6 +25,12 @@ class BaseController {
     private $extencao;
     private $mensagem;
 
+    # Enumerados
+    const SUCCESS = 1;
+    const INFO = 2;
+    const WARNING = 3;
+    const DANGER = 4;
+
     public function __construct() {
         $this->view = new \stdClass();
     }
@@ -76,10 +82,14 @@ class BaseController {
 
     protected function redirect($redirect, $tipo = null, $mensagem = null) {
         $this->redirect = $redirect;
+        $this->setSessionMessage();
+        $this->getRedirect() === TRUE ?: Container::pageNotFoundLayout();
+    }
+
+    protected function setSessionMessage($tipo, $mensagem) {
         $this->tipo = $tipo;
         $this->mensagem = $mensagem;
         $this->setSession();
-        $this->getRedirect() === TRUE ?: Container::pageNotFoundLayout();
     }
 
     protected function getRedirect() {
@@ -100,7 +110,6 @@ class BaseController {
             case 4: $data->danger = $this->mensagem;
                 break;
         }
-        
     }
 
 }
