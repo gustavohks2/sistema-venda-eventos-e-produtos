@@ -55,6 +55,7 @@
       font-size: 3rem;
       cursor: pointer;
       text-align: center;
+      position: relative;
 
       &--1 {
          color: $color-white;
@@ -69,8 +70,27 @@
    }
 
    &__box-text { 
+      display: block;
       font-size: 1.8rem; 
       line-height: 9rem;
+   }
+
+   &__cart-icon { position: relative; }
+
+   &__cart-counter {
+      top: -1rem;
+      left: 2rem;
+      width: 2rem;
+      height: 2rem;
       display: block;
+      font-weight: 800;
+      line-height: 2rem;
+      font-size: 1.2rem;
+      position: absolute;
+      text-align: center;
+      background-color: $color-white;
+      font-family: "Lato", sans-serif;
+      color: lighten($color-primary, 10%);
+      @include border-radius($circle-radius);
    }
 }

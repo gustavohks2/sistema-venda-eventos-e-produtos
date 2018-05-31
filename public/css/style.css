@@ -1,4 +1,5 @@
 /************ Grid *************/
+/*******************************/
 *,
 *:after,
 *:before {
@@ -251,7 +252,8 @@ ul, li {
     width: 9rem;
     font-size: 3rem;
     cursor: pointer;
-    text-align: center; }
+    text-align: center;
+    position: relative; }
     .header__box-option--1 {
       color: #ffffff;
       background-color: #0471d8;
@@ -260,9 +262,30 @@ ul, li {
       color: #0471d8;
       background-color: #ffffff; }
   .header__box-text {
+    display: block;
     font-size: 1.8rem;
-    line-height: 9rem;
-    display: block; }
+    line-height: 9rem; }
+  .header__cart-icon {
+    position: relative; }
+  .header__cart-counter {
+    top: -1rem;
+    left: 2rem;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    font-weight: 800;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    position: absolute;
+    text-align: center;
+    background-color: #ffffff;
+    font-family: "Lato", sans-serif;
+    color: #148bfb;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%; }
 
 .form {
   width: 100%;
