@@ -50,5 +50,7 @@
       display: inline-block;
       margin-left: 12rem;
       width: calc(90% - 10rem - 2rem); 
+
+      &.shake { animation: shake 300ms linear; }
    }
 }

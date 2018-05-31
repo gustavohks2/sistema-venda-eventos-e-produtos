@@ -50,6 +50,18 @@ ul, li {
     color: #148bfb;
     text-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.15); }
 
+@keyframes shake {
+  0% {
+    transform: translateX(-0.7rem); }
+  25% {
+    transform: translateX(0.7rem); }
+  50% {
+    transform: translateX(-0.7rem); }
+  75% {
+    transform: translateX(0.7rem); }
+  100% {
+    transform: translateX(0); } }
+
 .u-margin-top-huge {
   margin-top: 8rem !important; }
 
@@ -191,6 +203,8 @@ ul, li {
     display: inline-block;
     margin-left: 12rem;
     width: calc(90% - 10rem - 2rem); }
+    .login-form__message.shake {
+      animation: shake 300ms linear; }
 
 .header {
   height: 9rem;

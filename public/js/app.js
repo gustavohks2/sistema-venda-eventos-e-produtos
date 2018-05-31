@@ -1,7 +1,6 @@
 $(document).ready(function() {
-   // Elementos do modelo de objetos do documento - DOM
    popupOpen = false;
-
+   // Elementos do modelo de objetos do documento - DOM
    DOM = {
       popup: $(".popup"),
       loginOpen: $(".js-login-open"),

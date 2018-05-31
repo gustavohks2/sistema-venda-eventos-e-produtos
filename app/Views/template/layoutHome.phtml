@@ -83,16 +83,22 @@
                   url: "/login/verificar",
                   data: $(this).serialize(),
                   success: function(data) { handleUserLogin($.parseJSON(data)); },
-                  error: function(jqXhr, textStatus, errorThrown) { $formMessage.text("Erro: Não foi possível fazer login!") }
+                  error: function(jqXhr, textStatus, errorThrown) { showMessage("Erro: Não foi possível fazer login!") }
                });
             }
 
             const handleUserLogin = function(login) {
                if (!login.success) 
-                  $formMessage.text(login.message ? login.message : "");
+                  showMessage(login.message ? login.message : "");
 
                if (parseInt(login.nivel) === 1) location.reload();
                else if (parseInt(login.nivel) === 2) location.href = "/admin";
+            }
+
+            const showMessage = function(message) {
+               $formMessage.text(message);
+               $formMessage.addClass("shake");
+               setTimeout(function() { $formMessage.removeClass("shake"); }, 310);
             }
 
             $loginForm.on("submit", handleFormData);
