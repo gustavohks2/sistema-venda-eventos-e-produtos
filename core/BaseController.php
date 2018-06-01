@@ -9,6 +9,7 @@
 namespace Core;
 
 use Core\Session;
+use Core\FlashMessage;
 /**
  * Description of BaseController
  *
@@ -98,18 +99,24 @@ class BaseController {
     }
 
     protected function setSession() {
-        $data = Session::getInstance();
-        //fornece qual sera o nome da sessao e sua mensagem
-        switch ($this->tipo) {
-            case 1: $data->success = $this->mensagem;
-                break;
-            case 2: $data->info = $this->mensagem;
-                break;
-            case 3: $data->warning = $this->mensagem;
-                break;
-            case 4: $data->danger = $this->mensagem;
-                break;
-        }
+      $data = Session::getInstance();
+      //fornece qual sera o nome da sessao e sua mensagem
+      switch ($this->tipo) {
+          case 1: $data->success = $this->mensagem;
+              break;
+          case 2: $data->info = $this->mensagem;
+              break;
+          case 3: $data->warning = $this->mensagem;
+              break;
+          case 4: $data->danger = $this->mensagem;
+              break;
+      }
     }
 
-}
+    protected function displayMessage(bool $isModal = false) {
+      if (gettype($isModal) !== "boolean") 
+         throw new Exception("O argumento \$isModal deve ser do tipo lógico booleano.");
+         
+      FlashMessage::show($isModal);
+    }
+}   

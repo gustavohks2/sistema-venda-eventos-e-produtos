@@ -64,11 +64,10 @@ class HomeController extends BaseController {
         //verifica se foi cadastrado com sucesso retorna TRUE
         if ($cadastro->cadastrar($dados)) {
             //Apresenta a mensagem de cadastro efetuado com sucesso
-            echo 'Cadastrado com Sucesso';
+            $this->redirect("cadastro", self::SUCCESS, "Cadastrado com sucesso!");
         } else {
             //Apresenta a mensagem de erro ao tentar cadastrar
             $this->redirect("cadastro", self::DANGER, "OPS algo deu errado no seu cadastro");
-            
         }
     }
 

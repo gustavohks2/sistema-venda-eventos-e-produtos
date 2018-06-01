@@ -1,4 +1,4 @@
-<?php session_start(); use Core\FlashMessage; ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
    <head>
@@ -67,8 +67,6 @@
       <!--Conteudo-->
       <?php $this->content() ?>
       <!--Fim Conteudo-->
-      <?php
-         FlashMessage::show();
-      ?>
+      <?php $this->displayMessage() ?>
    </body>
 </html>
