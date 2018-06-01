@@ -13,11 +13,35 @@ class FlashMessage {
    }
    
    # Caso $isModal seja setado como true, será renderizado um popup para mensagem
-   public static function show($isModal = false) {
+   public static function show(bool $isModal = false, bool $hasYesNoOptions = false) {
+      if (gettype($isModal) !== "boolean") 
+         throw new Exception("O argumento \$isModal deve ser do tipo lógico booleano.");
+      if (gettype($hasYesNoOptions) !== "boolean") 
+         throw new Exception("O argumento \$hasYesNoOptions deve ser do tipo lógico booleano.");
+
       $session = Session::getInstance();
       foreach(self::$types as $type) {
          if (isset($session->{"$type"})) {
-            echo $session->{"$type"};
+
+            $yesNoOptions = $hasYesNoOptions ? 
+            '<div class="alert-box__yesorno-buttons">
+               <button class="alert-box__button">Sim</button>
+               <button class="alert-box__button">Não</button>
+            </div>' : '';
+
+            if ($isModal) {
+               echo '<div class="alert-box alert-box--success">
+                        <span classs="alert-box__close-button"></span>
+                        <div class="alert-box__message">
+                           <span class="alert-box__icon"></span>
+                           <p class="alert-box__message">' . $session->{"$type"} . '</p>
+                        </div>' .
+                           $yesNoOptions .'
+                     </div>' . "\n";
+            } else {
+               echo $session->{"$type"};
+            }
+            
             unset($session->{"$type"});
             return;
          }

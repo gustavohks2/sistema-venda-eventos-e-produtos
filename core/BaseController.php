@@ -114,10 +114,7 @@ class BaseController {
       }
     }
 
-    protected function displayMessage(bool $isModal = false) {
-      if (gettype($isModal) !== "boolean") 
-         throw new Exception("O argumento \$isModal deve ser do tipo lógico booleano.");
-         
-      FlashMessage::show($isModal);
+    protected function displayMessage(bool $isModal = false, bool $hasYesNoOptions = false) {
+      FlashMessage::show($isModal, $hasYesNoOptions);
     }
 }   

@@ -23,6 +23,7 @@
       <title><?php $this->getPageTitle('| SVEP')?></title>
    </head>
    <body>
+      <?php $this->displayMessage() ?>
       <!--------------------------- Header ---------------------------->
       <div class="popup popup__overlay js-popup">
          <span class="popup__close-btn js-login-close"></span>
@@ -63,15 +64,16 @@
                <span class="header__box-text">Login</span>   
             </div>
             <?php } else { ?>
-            <div class="header__box-option header__box-option--2">
-               <span class="header__box-text"><a href="/login/sair">Sair</a></span>
-            </div>
+            <a href="/login/sair">
+               <div class="header__box-option header__box-option--2">
+                  <span class="header__box-text">Sair</span>
+               </div>
+            </a>
             <?php } ?>
          </nav>
       </header>
       <!--Conteudo-->
       <?php $this->content() ?>
       <!--Fim Conteudo-->
-      <?php $this->displayMessage() ?>
    </body>
 </html>
