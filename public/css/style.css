@@ -260,11 +260,19 @@ ul, li {
       line-height: 10rem; }
     .header__box-option--2 {
       color: #0471d8;
-      background-color: #ffffff; }
+      background-color: #ffffff;
+      transition: all .35s linear; }
+      .header__box-option--2:hover {
+        color: #ffffff;
+        background-color: #148bfb; }
   .header__box-text {
     display: block;
     font-size: 1.8rem;
     line-height: 9rem; }
+    .header__box-text a, .header__box-text a:visited
+a:link, .header__box-text a:active {
+      color: inherit;
+      text-decoration: none; }
   .header__cart-icon {
     position: relative; }
   .header__cart-counter {

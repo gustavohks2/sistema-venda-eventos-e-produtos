@@ -33,7 +33,7 @@ class Login extends BaseModel {
             $id = $usuario[0]->idusuario;
            
             $data = Session::getInstance();
-            $data->authenticado = TRUE;
+            $data->autenticado = TRUE;
             $data->login = $login;
             $data->nivel = $nivel;
             $data->id = $id;         

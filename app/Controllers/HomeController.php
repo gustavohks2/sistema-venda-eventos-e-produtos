@@ -71,4 +71,11 @@ class HomeController extends BaseController {
         }
     }
 
+    public function logout() {
+        unset($this->session->id);
+        unset($this->session->login);
+        unset($this->session->nivel);
+        unset($this->session->autenticado);
+        $this->redirect("", self::INFO, "Você saiu!");
+    }
 }

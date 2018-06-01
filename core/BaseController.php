@@ -25,6 +25,7 @@ class BaseController {
     private $tipo;
     private $extencao;
     private $mensagem;
+    protected $session;
 
     # Enumerados
     const SUCCESS = 1;
@@ -34,6 +35,7 @@ class BaseController {
 
     public function __construct() {
         $this->view = new \stdClass();
+        $this->session = Session::getInstance();
     }
 
     /*Ecolhe qual qual o caminho que sera achado a o arquivo da view
@@ -83,7 +85,7 @@ class BaseController {
 
     protected function redirect($redirect, $tipo = null, $mensagem = null) {
         $this->redirect = $redirect;
-        $this->setSessionMessage();
+        $this->setSessionMessage($tipo, $mensagem);
         $this->getRedirect() === TRUE ?: Container::pageNotFoundLayout();
     }
 
@@ -99,16 +101,15 @@ class BaseController {
     }
 
     protected function setSession() {
-      $data = Session::getInstance();
       //fornece qual sera o nome da sessao e sua mensagem
       switch ($this->tipo) {
-          case 1: $data->success = $this->mensagem;
+          case 1: $this->session->success = $this->mensagem;
               break;
-          case 2: $data->info = $this->mensagem;
+          case 2: $this->session->info = $this->mensagem;
               break;
-          case 3: $data->warning = $this->mensagem;
+          case 3: $this->session->warning = $this->mensagem;
               break;
-          case 4: $data->danger = $this->mensagem;
+          case 4: $this->session->danger = $this->mensagem;
               break;
       }
     }
