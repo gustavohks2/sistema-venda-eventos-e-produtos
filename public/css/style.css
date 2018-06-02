@@ -84,6 +84,7 @@ ul, li {
   backface-visibility: visible !important;
   animation-name: flipInX;
   animation-duration: .8s;
+  animation-delay: .45s;
   animation-fill-mode: both; }
 
 .u-margin-top-huge {
