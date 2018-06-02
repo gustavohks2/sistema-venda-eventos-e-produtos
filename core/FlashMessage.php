@@ -30,11 +30,11 @@ class FlashMessage {
             </div>' : '';
 
             if ($isModal) {
-               echo '<div class="alert-box alert-box--success">
-                        <span classs="alert-box__close-button"></span>
+               echo '<div class="alert-box alert-box--' . $type . ' flipInX js-alert-box">
+                        <span class="alert-box__close-button js-alert-close-button"></span>
                         <div class="alert-box__message">
                            <span class="alert-box__icon"></span>
-                           <p class="alert-box__message">' . $session->{"$type"} . '</p>
+                           <p class="alert-box__text">' . $session->{"$type"} . '</p>
                         </div>' .
                            $yesNoOptions .'
                      </div>' . "\n";

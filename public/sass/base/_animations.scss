@@ -19,3 +19,36 @@
       transform: translateX(0);
    }
 }
+
+@keyframes flipInX {
+   from {
+      transform: perspective(100rem) rotate3d(1, 0, 0, 90deg) translateX(-50%);
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+  
+    40% {
+      transform: perspective(100rem) rotate3d(1, 0, 0, -20deg) translateX(-50%);
+      animation-timing-function: ease-in;
+    }
+  
+    60% {
+      transform: perspective(100rem) rotate3d(1, 0, 0, 10deg) translateX(-50%);
+      opacity: 1;
+    }
+  
+    80% {
+      transform: perspective(100rem) rotate3d(1, 0, 0, -5deg) translateX(-50%);
+    }
+  
+    to {
+      transform: perspective(100rem) translateX(-50%);
+    }
+}
+ 
+.flipInX {
+   backface-visibility: visible !important;
+   animation-name: flipInX;
+   animation-duration: .8s;
+   animation-fill-mode: both;
+}

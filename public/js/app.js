@@ -3,10 +3,12 @@ $(document).ready(function() {
    // Elementos do modelo de objetos do documento - DOM
    DOM = {
       popup: $(".popup"),
+      alertBox: $(".js-alert-box"),
       loginOpen: $(".js-login-open"),
       loginForm : $(".js-login-form"),
       loginClose: $(".js-login-close"),
       formMessage : $(".js-login-form-message"),
+      alertCloseButton: $(".js-alert-close-button"),
       inputs: {
          user: $(".js-input-user"),
          password: $(".js-input-psw"),
@@ -20,13 +22,22 @@ $(document).ready(function() {
       DOM.loginForm.on("submit", handleFormData);
       DOM.loginOpen.on("click", openLoginPopup);
       DOM.loginClose.on("click", closeLoginPopup);
+      DOM.alertCloseButton.on("click", closeAlertBox)
       $(document).on("keyup", closeLoginPopupKeyboard);
+
+      setTimeout(hideAlert, 4000);
    }
 
    const bindMasks = function() {
       DOM.inputs.CEP.mask("00000-000");
       DOM.inputs.CPF.mask("000.000.000-00");
       DOM.inputs.telefone.mask("(00) 0000-0000");
+   }
+
+   const hideAlert = function() { DOM.alertBox.hide(); }
+
+   const closeAlertBox = function() {
+      $(this).parent().hide().delay(100).remove();
    }
 
    const openLoginPopup = function() {

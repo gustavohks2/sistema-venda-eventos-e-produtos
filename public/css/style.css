@@ -1,3 +1,4 @@
+/********** Messages ***********/
 /************ Grid *************/
 /*******************************/
 *,
@@ -62,6 +63,28 @@ ul, li {
     transform: translateX(0.7rem); }
   100% {
     transform: translateX(0); } }
+
+@keyframes flipInX {
+  from {
+    transform: perspective(100rem) rotate3d(1, 0, 0, 90deg) translateX(-50%);
+    animation-timing-function: ease-in;
+    opacity: 0; }
+  40% {
+    transform: perspective(100rem) rotate3d(1, 0, 0, -20deg) translateX(-50%);
+    animation-timing-function: ease-in; }
+  60% {
+    transform: perspective(100rem) rotate3d(1, 0, 0, 10deg) translateX(-50%);
+    opacity: 1; }
+  80% {
+    transform: perspective(100rem) rotate3d(1, 0, 0, -5deg) translateX(-50%); }
+  to {
+    transform: perspective(100rem) translateX(-50%); } }
+
+.flipInX {
+  backface-visibility: visible !important;
+  animation-name: flipInX;
+  animation-duration: .8s;
+  animation-fill-mode: both; }
 
 .u-margin-top-huge {
   margin-top: 8rem !important; }
@@ -358,6 +381,67 @@ a:link, .header__box-text a:active {
     display: block;
     margin: 0 auto;
     margin-bottom: 5rem; }
+
+.alert-box {
+  top: 12rem;
+  z-index: 9999;
+  font-size: 2rem;
+  max-width: 70rem;
+  letter-spacing: 1px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px; }
+  .alert-box__close-button {
+    z-index: 1;
+    top: 1.5rem;
+    right: 2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    position: absolute;
+    font-family: "FontAwesome";
+    transition: color .2s ease-in-out;
+    color: #e0e0e0; }
+    .alert-box__close-button::after {
+      content: "\f00d"; }
+    .alert-box__close-button:hover {
+      color: #fa789f; }
+  .alert-box__message {
+    padding: 4rem 6rem 4rem 4rem;
+    position: relative; }
+  .alert-box__icon {
+    position: absolute;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    margin-right: 1.6rem;
+    vertical-align: middle;
+    font-family: "FontAwesome"; }
+  .alert-box__text {
+    margin-left: 6.5rem; }
+  .alert-box--success .alert-box__icon::before {
+    content: "\f05d"; }
+  .alert-box--info .alert-box__icon::before {
+    content: "\f05a"; }
+  .alert-box--danger .alert-box__icon::before {
+    content: "\f06d"; }
+  .alert-box--warning .alert-box__icon::before {
+    content: "\f071"; }
+  .alert-box--success .alert-box__message {
+    color: #32ff7e; }
+  .alert-box--info .alert-box__message {
+    color: #3498db; }
+  .alert-box--danger .alert-box__message {
+    color: #eb084c; }
+  .alert-box--warning .alert-box__message {
+    color: #e67e22; }
 
 .row {
   margin: 0 auto;

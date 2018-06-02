@@ -26,7 +26,7 @@ class Login extends BaseModel {
     
     public function verificarlogin($dados){
         $dados->password = md5($dados->password);
-        $usuario = $this->read("*", "login = '{$dados->usuario}' and senha = '{$dados->password}';");
+        $usuario = $this->read("*", "BINARY login = '{$dados->usuario}' and senha = '{$dados->password}'");
         if (count($usuario) > 0) {
             $login = $usuario[0]->login;
             $nivel = $usuario[0]->nivel;

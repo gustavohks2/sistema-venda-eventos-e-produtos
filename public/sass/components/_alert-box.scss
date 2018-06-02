@@ -1,0 +1,56 @@
+.alert-box {
+   top: 12rem;
+   z-index: 9999;
+   font-size: 2rem;
+   max-width: 70rem;
+   letter-spacing: 1px;
+   @include horizontal-centered;
+   background-color: $color-white;
+   box-shadow: 0 0 2rem rgba($color-black, .3);
+   @include border-radius($default-border-radius);
+
+   &__close-button {
+      z-index: 1;
+      top: 1.5rem;
+      right: 2rem;
+      cursor: pointer;
+      font-size: 2rem;
+      position: absolute;
+      font-family: "FontAwesome";
+      transition: color .2s ease-in-out;
+      color: lighten($color-gray-light, 6%);
+
+      &::after { content: "\f00d"; }   
+
+      &:hover { color: lighten($color-error, 25%); }
+   }
+
+   &__message { 
+      padding: 4rem 6rem 4rem 4rem;
+      position: relative;
+   }
+
+   &__icon {
+      position: absolute;
+      @include vertical-centered;
+      font-size: 3rem;
+      margin-right: 1.6rem;
+      vertical-align: middle;
+      font-family: "FontAwesome";
+   }  
+
+   &__text {
+      margin-left: 6.5rem;
+   }
+   
+   &--success &__icon::before { content: "\f05d"; }
+   &--info &__icon::before { content: "\f05a"; }
+   &--danger &__icon::before { content: "\f06d"; }
+   &--warning &__icon::before { content: "\f071"; }
+
+   &--success &__message { color: $color-success; }
+   &--info &__message { color: $color-info; }
+   &--danger &__message { color: $color-error; }
+   &--warning &__message { color: $color-warning; }
+
+}

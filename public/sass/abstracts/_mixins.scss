@@ -13,6 +13,18 @@
    transform: translate(-50%, -50%);
 }
 
+@mixin horizontal-centered {
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+@mixin vertical-centered {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+}
+
 @mixin border-radius($radius) {
    -webkit-border-radius: $radius;
    -moz-border-radius: $radius;

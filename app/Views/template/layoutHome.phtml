@@ -12,6 +12,7 @@
       <link rel="stylesheet" href="css/linea-basic/styles.css">
       <link rel="stylesheet" href="css/linea-ecommerce/styles.css">
       <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"> 
+      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
       <!-- Tags relacionadas ao estilo - Internas -->
       <link rel="stylesheet" href="css/style.css">
       <!-- Scripts Javascript -->
@@ -23,7 +24,7 @@
       <title><?php $this->getPageTitle('| SVEP')?></title>
    </head>
    <body>
-      <?php $this->displayMessage() ?>
+      <?php $this->displayMessage(true) ?>
       <!--------------------------- Header ---------------------------->
       <div class="popup popup__overlay js-popup">
          <span class="popup__close-btn js-login-close"></span>
