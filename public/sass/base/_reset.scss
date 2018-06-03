@@ -12,10 +12,12 @@ html {
 }
 
 body {
-   color: #505050;
+   color: $color-gray-dark-2;
    font-weight: 400;
    font-family: "Dosis", "Lato", "Roboto", sans-serif;
 }
+
+.body--gray { background-color: lighten($color-gray-light, 17%); }
 
 img, video { max-width: 100%; }
 

@@ -32,3 +32,7 @@
    -o-border-radius: $radius;
    border-radius: $radius;
 }
+
+@mixin subtle-line-divisor($side) {
+   border-#{$side}: 1px solid lighten($color-gray-light, 12%);
+}

@@ -1,0 +1,71 @@
+.topbar {
+   right: 0;
+   height: 8rem;
+   position: fixed;
+   padding-right: 6rem;
+   width: calc(100% - 8rem);
+   background-color: $color-white;
+   @include subtle-line-divisor(bottom);
+
+   &__search {
+      height: 70%;
+      width: 40rem;
+      left: 3.5rem;
+      @include vertical-centered;
+   }
+
+   &__icon {
+      opacity: .4;
+      width: 2.3rem;
+      height: 2.3rem;
+      background-size: 100%;
+      @include vertical-centered;
+      background-image: url("../img/icon-search-input.svg");
+   }
+
+   &__input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      font-size: 2.5rem;
+      padding: 0 3.5rem;
+      font-family: inherit;
+      color: $color-gray-light;
+      background-color: $color-white;
+
+      &:focus {
+         box-shadow: none;
+      }
+   }
+
+   &__item {
+      width: 8rem;
+      float: right;
+      height: 100%;
+   }
+
+   &__profile-pic {
+      height: 100%;
+      position: relative;
+      text-align: center;
+   }
+
+   &__img {
+      max-width: 70%;
+      max-height: 70%;
+      margin-top: 1.3rem;
+      border-radius: 50%;
+      display: inline-block;
+      border: 3px solid rgba(44, 235, 171, 0.425);
+   }
+
+   &__arrow-down {
+      top: 50%;
+      right: -1.4rem;
+      cursor: pointer;
+      position: absolute;
+      color: $color-gray-light-2;
+      transform: translateY(-50%) rotate(45deg);
+   }
+}

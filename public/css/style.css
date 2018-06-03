@@ -17,6 +17,9 @@ body {
   font-weight: 400;
   font-family: "Dosis", "Lato", "Roboto", sans-serif; }
 
+.body--gray {
+  background-color: #fcfcfc; }
+
 img, video {
   max-width: 100%; }
 
@@ -443,6 +446,91 @@ a:link, .header__box-text a:active {
     color: #eb084c; }
   .alert-box--warning .alert-box__message {
     color: #e67e22; }
+
+.sidebar-menu {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 8rem;
+  height: 100vh;
+  position: fixed;
+  background-image: linear-gradient(to bottom, #2cebab, #07d7df); }
+  .sidebar-menu__item, .sidebar-menu__logo {
+    width: 100%;
+    height: 8rem;
+    text-align: center; }
+  .sidebar-menu__item {
+    transition: background-color .3s ease-in-out; }
+    .sidebar-menu__item:hover {
+      background-color: #ffffff;
+      border-right: 1px solid #f0f0f0; }
+  .sidebar-menu__item:hover .sidebar-menu__icon {
+    color: #07d7df;
+    font-size: 3.5rem; }
+  .sidebar-menu__icon {
+    font-size: 3rem;
+    color: #ffffff;
+    line-height: 8.5rem;
+    transition: color 0.3s ease-in-out, font-size 0.25s 0.1s cubic-bezier(1, 0, 0, 1); }
+
+.topbar {
+  right: 0;
+  height: 8rem;
+  position: fixed;
+  padding-right: 6rem;
+  width: calc(100% - 8rem);
+  background-color: #ffffff;
+  border-bottom: 1px solid #f0f0f0; }
+  .topbar__search {
+    height: 70%;
+    width: 40rem;
+    left: 3.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
+  .topbar__icon {
+    opacity: .4;
+    width: 2.3rem;
+    height: 2.3rem;
+    background-size: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url("../img/icon-search-input.svg"); }
+  .topbar__input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 2.5rem;
+    padding: 0 3.5rem;
+    font-family: inherit;
+    color: #d1d1d1;
+    background-color: #ffffff; }
+    .topbar__input:focus {
+      box-shadow: none; }
+  .topbar__item {
+    width: 8rem;
+    float: right;
+    height: 100%; }
+  .topbar__profile-pic {
+    height: 100%;
+    position: relative;
+    text-align: center; }
+  .topbar__img {
+    max-width: 70%;
+    max-height: 70%;
+    margin-top: 1.3rem;
+    border-radius: 50%;
+    display: inline-block;
+    border: 3px solid rgba(44, 235, 171, 0.425); }
+  .topbar__arrow-down {
+    top: 50%;
+    right: -1.4rem;
+    cursor: pointer;
+    position: absolute;
+    color: #7e7e7e;
+    transform: translateY(-50%) rotate(45deg); }
 
 .row {
   margin: 0 auto;

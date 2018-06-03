@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-<!-- TODO: Jogar layout padrão em outro arquivo para reutilização -->
 <!DOCTYPE html>
 <html lang="pt-br">
    <head>
@@ -11,20 +7,43 @@ session_start();
       <meta http-equiv="X-UA-Compatible" content="ie-edge">
       <meta name="description" content="Alterar descrição">
       <meta name="author" content="Lucas, Gustavo, Wesllen">
-      <meta name="viewport" content="width=device-width, intial-scale=1.0">
+      <meta name="viewport" content="width=device-width, intial-scale=1">
       <!-- Tags relacionadas ao estilo - Fontes e Ícones -->
-      <link rel="stylesheet" href="css/linea-basic/styles.css">
       <link rel="stylesheet" href="css/linea-ecommerce/styles.css">
+      <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"> 
+      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
       <!-- Tags relacionadas ao estilo - Internas -->
       <link rel="stylesheet" href="css/style.css">
+      <!-- Scripts Javascript -->
+      <script src="node_modules/jquery/dist/jquery.min.js"></script>
+      <script src="node_modules/simple-slider/dist/simpleslider.min.js"></script>
+      <script src="node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+      <script src="js/app.js"></script>
 
       <title><?php $this->getPageTitle('| SVEP')?></title>
    </head>
-   
-   <body>
-        <!--Conteudo-->
-        <?php $this->content()?>
-        
-        <!--Fim Conteudo-->        
-    </body>
+   <body class="body--gray">   
+      <?php $this->displayMessage(true) ?>
+      <div class="sidebar-menu">
+         <div class="sidebar-menu__logo"></div>
+         <div class="sidebar-menu__item"><i class="sidebar-menu__icon icon-ecommerce-bag"></i></div>
+         <div class="sidebar-menu__item"><i class="sidebar-menu__icon icon-ecommerce-sales"></i></div>
+         <div class="sidebar-menu__item"><i class="sidebar-menu__icon icon-ecommerce-wallet"></i></div>
+         <div class="sidebar-menu__item"><i class="sidebar-menu__icon icon-ecommerce-creditcard"></i></div>
+      </div>
+      <div class="topbar">
+         <div class="topbar__search">
+            <span class="topbar__icon"></span>
+            <input class="topbar__input" type="text" placeholder="Pesquisar ...">
+         </div>
+         <div class="topbar__item">
+            <div class="topbar__profile-pic">
+               <img class="topbar__img" src="img/cake.svg" alt=""><span class="topbar__arrow-down">&#9698;</span>
+            </div>
+         </div>
+      </div>
+      <!--Conteudo-->
+      <?php $this->content() ?>
+      <!--Fim Conteudo-->
+   </body>
 </html>
