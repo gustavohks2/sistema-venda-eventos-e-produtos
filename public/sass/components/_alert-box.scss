@@ -1,10 +1,12 @@
 .alert-box {
+   left: 50%;
    top: 12rem;
    z-index: 9999;
+   position: fixed;
    font-size: 2rem;
    max-width: 70rem;
    letter-spacing: 1px;
-   @include horizontal-centered;
+   transform: translateX(-50%);
    background-color: $color-white;
    box-shadow: 0 0 2rem rgba($color-black, .3);
    @include border-radius($default-border-radius);

@@ -395,13 +395,13 @@ a:link, .header__box-text a:active {
     margin-bottom: 5rem; }
 
 .alert-box {
+  left: 50%;
   top: 12rem;
   z-index: 9999;
+  position: fixed;
   font-size: 2rem;
   max-width: 70rem;
   letter-spacing: 1px;
-  position: absolute;
-  left: 50%;
   transform: translateX(-50%);
   background-color: #ffffff;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
