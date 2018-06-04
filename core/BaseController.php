@@ -87,6 +87,7 @@ class BaseController {
         $this->redirect = $redirect;
         $this->setSessionMessage($tipo, $mensagem);
         $this->getRedirect() === TRUE ?: Container::pageNotFoundLayout();
+        exit;
     }
 
     protected function setSessionMessage($tipo, $mensagem) {

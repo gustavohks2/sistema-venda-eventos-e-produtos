@@ -15,7 +15,7 @@ use Core\BaseModel;
  *
  * @author laboratorio
  */
-class Cadastro extends BaseModel {
+class Usuario extends BaseModel {
     //definir os nomes da tabelas maximo de 4
     protected $tabela = "endereco";
     protected $tabela2 = "pessoa";

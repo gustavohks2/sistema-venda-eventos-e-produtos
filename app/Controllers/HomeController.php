@@ -4,7 +4,7 @@ namespace App\Controllers;
 use Core\Session;
 use Core\BaseController;
 use App\Models\Login;
-use App\Models\Cadastro;
+use App\Models\Usuario;
 
 class HomeController extends BaseController {
 
@@ -56,13 +56,13 @@ class HomeController extends BaseController {
         $this->Render('home/cadastro', 'layoutHome');
     }
 
-    public function cadastroCreate($request) {
+    public function cadastrar($request) {
         //traz todos as request post enviadas
         $dados = $request->post;
         //instacia o objeto da model Cadastro
-        $cadastro = new Cadastro();
+        $usuario = new Usuario();
         //verifica se foi cadastrado com sucesso retorna TRUE
-        if ($cadastro->cadastrar($dados)) {
+        if ($usuario->cadastrar($dados)) {
             //Apresenta a mensagem de cadastro efetuado com sucesso
             $this->redirect("cadastro", self::SUCCESS, "Cadastrado com sucesso!");
         } else {

@@ -6,7 +6,7 @@ use Core\Session;
 
 class FlashMessage {
 
-   private static $types = ["success", "danger", "info", "alert"];
+   private static $types = ["success", "danger", "info", "warning"];
 
    public static function getInstance() {
       return self;
