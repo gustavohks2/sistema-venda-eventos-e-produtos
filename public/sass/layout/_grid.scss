@@ -21,3 +21,15 @@
    .col-2-of-4 { width: calc(2 * ((100% - 3 * #{$horizontal-gap}) / 4) + #{$horizontal-gap}); }
    .col-3-of-4 { width: calc(3 * ((100% - 3 * #{$horizontal-gap}) / 4) + 2 * #{$horizontal-gap}); }
 }
+
+.full-container .row { max-width: 100%; }
+
+.placeholder { 
+   width: 100%;
+   padding: none;
+}
+
+.placeholder .row [class^="col-"] {
+   height: 20rem;
+   background-color: lighten($color-gray-dark, 65%);
+}

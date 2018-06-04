@@ -18,6 +18,7 @@ body {
 }
 
 .body--gray { background-color: lighten($color-gray-light, 17%); }
+.body--padded { padding: 12rem 4rem 0 12rem; }
 
 img, video { max-width: 100%; }
 

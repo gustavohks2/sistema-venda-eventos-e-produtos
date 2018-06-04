@@ -16,13 +16,12 @@
       <link rel="stylesheet" href="css/style.css">
       <!-- Scripts Javascript -->
       <script src="node_modules/jquery/dist/jquery.min.js"></script>
-      <script src="node_modules/simple-slider/dist/simpleslider.min.js"></script>
       <script src="node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
-      <script src="js/app.js"></script>
+      <script src="js/admin-panel.js"></script>
 
       <title><?php $this->getPageTitle('| SVEP')?></title>
    </head>
-   <body class="body--gray">   
+   <body class="body--gray body--padded">   
       <?php $this->displayMessage(true) ?>
       <div class="sidebar-menu">
          <div class="sidebar-menu__logo"></div>
@@ -38,7 +37,14 @@
          </div>
          <div class="topbar__item">
             <div class="topbar__profile-pic">
-               <img class="topbar__img" src="img/cake.svg" alt=""><span class="topbar__arrow-down">&#9698;</span>
+               <img class="topbar__img" src="img/cake.svg" alt=""><i class="fa fa-caret-down topbar__arrow-down js-arrow-down-button"></i>
+               <ul class="topbar__nav-menu js-nav-menu">
+                  <li><a href="#">Option 1</a></li>
+                  <li><a href="#">Option 2</a></li>
+                  <li><a href="#">Option 3</a></li>
+                  <span class="u-divisor"></span>
+                  <li><a href="/login/sair" title="Sair da sessão atual de usuário">Sair</a></li>
+               </ul>
             </div>
          </div>
       </div>

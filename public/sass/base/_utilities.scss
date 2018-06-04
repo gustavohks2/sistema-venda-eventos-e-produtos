@@ -9,3 +9,9 @@
 .u-margin-bottom-sml { margin-bottom: 2rem !important; }
 
 .u-text-center { text-align: center !important; }
+
+.u-divisor {
+   display: block;
+   height: 1px;
+   background-color: lighten($color-gray-light, 12%);
+}
