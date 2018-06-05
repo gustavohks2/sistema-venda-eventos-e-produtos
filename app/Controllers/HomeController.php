@@ -67,7 +67,7 @@ class HomeController extends BaseController {
             $this->redirect("cadastro", self::SUCCESS, "Cadastrado com sucesso!");
         } else {
             //Apresenta a mensagem de erro ao tentar cadastrar
-            $this->redirect("cadastro", self::DANGER, "OPS algo deu errado no seu cadastro");
+            $this->redirect("cadastro", self::DANGER, "OPS, algo deu errado no seu cadastro");
         }
     }
 

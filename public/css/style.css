@@ -466,7 +466,9 @@ a:link, .header__box-text a:active {
   .sidebar-menu__item, .sidebar-menu__logo {
     width: 100%;
     height: 8rem;
-    text-align: center; }
+    display: block;
+    text-align: center;
+    text-decoration: none; }
   .sidebar-menu__item {
     cursor: pointer;
     transition: background-color .3s ease-in-out; }

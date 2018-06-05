@@ -9,15 +9,15 @@
       <meta name="author" content="Lucas, Gustavo, Wesllen">
       <meta name="viewport" content="width=device-width, intial-scale=1">
       <!-- Tags relacionadas ao estilo - Fontes e Ícones -->
-      <link rel="stylesheet" href="css/linea-ecommerce/styles.css">
+      <link rel="stylesheet" href="/css/linea-ecommerce/styles.css">
       <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"> 
-      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+      <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.min.css">
       <!-- Tags relacionadas ao estilo - Internas -->
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="/css/style.css">
       <!-- Scripts Javascript -->
-      <script src="node_modules/jquery/dist/jquery.min.js"></script>
-      <script src="node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
-      <script src="js/admin-panel.js"></script>
+      <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+      <script src="/node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+      <script src="/js/admin-panel.js"></script>
 
       <title><?php $this->getPageTitle('| SVEP')?></title>
    </head>
@@ -25,10 +25,10 @@
       <?php $this->displayMessage(true) ?>
       <div class="sidebar-menu">
          <div class="sidebar-menu__logo"></div>
-         <div class="sidebar-menu__item"><i class="sidebar-menu__icon icon-ecommerce-bag"></i></div>
-         <div class="sidebar-menu__item"><i class="sidebar-menu__icon icon-ecommerce-sales"></i></div>
-         <div class="sidebar-menu__item"><i class="sidebar-menu__icon icon-ecommerce-wallet"></i></div>
-         <div class="sidebar-menu__item"><i class="sidebar-menu__icon icon-ecommerce-creditcard"></i></div>
+         <a href="/admin/produtos" class="sidebar-menu__item"><i class="sidebar-menu__icon icon-ecommerce-bag"></i></a>
+         <a class="sidebar-menu__item"><i class="sidebar-menu__icon icon-ecommerce-sales"></i></a>
+         <a class="sidebar-menu__item"><i class="sidebar-menu__icon icon-ecommerce-wallet"></i></a>
+         <a class="sidebar-menu__item"><i class="sidebar-menu__icon icon-ecommerce-creditcard"></i></a>
       </div>
       <div class="topbar">
          <div class="topbar__search">
@@ -37,7 +37,7 @@
          </div>
          <div class="topbar__item">
             <div class="topbar__profile-pic">
-               <img class="topbar__img" src="img/cake.svg" alt=""><i class="fa fa-caret-down topbar__arrow-down js-arrow-down-button"></i>
+               <img class="topbar__img" src="/img/cake.svg" alt=""><i class="fa fa-caret-down topbar__arrow-down js-arrow-down-button"></i>
                <ul class="topbar__nav-menu js-nav-menu">
                   <li><a href="#">Option 1</a></li>
                   <li><a href="#">Option 2</a></li>

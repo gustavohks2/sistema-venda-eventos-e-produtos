@@ -10,7 +10,9 @@
    &__item, &__logo {
       width: 100%;
       height: 8rem;
+      display: block;
       text-align: center;
+      text-decoration: none;
    }
 
    &__item {
