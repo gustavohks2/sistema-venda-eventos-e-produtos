@@ -10,7 +10,9 @@ $routes[] = ['/usuario/cadastrar', 'HomeController@cadastrar'];
 $routes[] = ['/admin', 'AdminController@index'];
 $routes[] = ['/admin/produtos', 'AdminController@manterProdutos'];
 
+
 $routes[] = ['/produto', 'ProdutoController@cadastro'];
+$routes[] = ['/admin/produto/cadastro', 'ProdutoController@cadastro'];
 $routes[] = ['/produto/cadastrar', 'ProdutoController@cadastrar'];
 
 return $routes;

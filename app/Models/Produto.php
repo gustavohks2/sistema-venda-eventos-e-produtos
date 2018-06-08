@@ -24,4 +24,10 @@ class Produto extends BaseModel {
         return FALSE;
     }
 
+    public function listar() {
+        if ($produtos = $this->read("*")) 
+            return $produtos;
+        return FALSE;
+    }
+
 }

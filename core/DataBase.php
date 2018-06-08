@@ -13,18 +13,6 @@ class DataBase {
     private $dbName;
     private static $pdo;
     
-//    public function __construct() {
-
-//        
-//        $this->usuario = $username;
-//        $this->servidor = $host;
-//        $this->dbName = $dbname;
-//        $this->senha = $password;
-//        $this->charset = $charset;
-//    }
-    
-    
-    
     public function __construct() {
         $conf = require_once __DIR__.'/../app/Config/config.php';
         

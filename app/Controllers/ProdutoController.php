@@ -7,10 +7,16 @@ use App\Models\Produto;
 
 class ProdutoController extends BaseController {
 
+    protected $tabela = "produto";
+
     public function index() {
         $this->setPageTitle('Produto');
-        //renderiza a pagina
         $this->Render('produto/cadastro', 'layoutHome');
+    }
+
+    public function cadastro() {
+        $this->setPageTitle("Cadastro Produtos");
+        $this->Render("produto/cadastro", "layoutAdmin");
     }
     
     public function cadastrar($request) {

@@ -1,0 +1,26 @@
+
+<table >
+   <thead>
+      <tr>
+         <th>Nome</th>
+         <th>Fabricante</th>
+         <th>Peso</th>
+         <th>Valor Venda</th>
+         <th>Valor Comprado</th>
+         <th>Data Validade</th>
+      </tr>
+   </thead>
+   <tbody>
+      <?php foreach ($this->view->produtos as $produto): ?>
+         <tr>
+            <td><?=$produto->nome?></td>
+            <td><?=$produto->fabricante?></td>
+            <td><?=$produto->peso?></td>
+            <td><?=$produto->valorVenda?></td>
+            <td><?=$produto->valorComprado?></td>
+            <td><?=$produto->dataValidade?></td>
+            <td><i class="fa fa-ellipsis-h"></i></td>
+         </tr>
+      <?php endforeach; ?>
+   </tbody>
+</table>
