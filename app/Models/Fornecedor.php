@@ -12,18 +12,17 @@ class Fornecedor extends BaseModel {
 
     protected $chaveEstrangeira = "fkEndereco";
 
-    public function cadastrar($dados) {
-
+    public function cadastrar($fornecedor) {
         $array = array(
             "0" => array(
-               "cep" => "109381023", "endereco" => "Nenhum", "complemento" => "Nenhum",
-               "numero" => "123 AV", "bairro" => "Rec", "cidade" => "Rec",
-               "uf" => "DF", "logradouro" => "Teste"
+               "cep" => $fornecedor->cep, "endereco" => $fornecedor->endereco, "complemento" => $fornecedor->complemento,
+               "numero" => $fornecedor->numero, "bairro" => $fornecedor->bairro, "cidade" => $fornecedor->cidade,
+               "uf" => $fornecedor->uf, "logradouro" => $fornecedor->logradouro
             ),
             "1" => array(
-               "nome" => "Leite condensado", "telefone" => "1209381039", "email" => "forn@mail.com",
-               "razaoSocial" => "Fornec Ações", "status" => "1", "dataBloqueioFornecedor" => "2018-11-02",
-               "inscricaoEstadual" => "1093810293"
+               "nome" => $fornecedor->nome, "telefone" => $fornecedor->telefone, "email" => $fornecedor->email,
+               "razaoSocial" => $fornecedor->razaoSocial, "status" => "0", "dataBloqueioFornecedor" => "1920-01-01",
+               "inscricaoEstadual" => $fornecedor->inscricaoEstadual
            )
         );
 
@@ -32,9 +31,7 @@ class Fornecedor extends BaseModel {
     }
 
     public function listar() {
-        if ($fornecedores = $this->read("*")) 
-            return $fornecedores;
-        return FALSE;
+        return ($fornecedores = $this->read("*")) ? $fornecedores : FALSE;
     }
 
 }

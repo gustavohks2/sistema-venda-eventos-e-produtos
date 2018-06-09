@@ -14,6 +14,7 @@ $routes[] = ['/admin/fornecedores', 'AdminController@manterFornecedores'];
 $routes[] = ['/admin/produto/cadastro', 'ProdutoController@cadastro'];
 $routes[] = ['/produto/cadastrar', 'ProdutoController@cadastrar'];
 
+$routes[] = ['/admin/fornecedor/cadastro', 'AdminController@cadastroFornecedor'];
 $routes[] = ['/fornecedor/cadastrar', 'FornecedorController@cadastrar'];
 $routes[] = ['/fornecedor', 'FornecedorController@index'];
 

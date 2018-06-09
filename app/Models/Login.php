@@ -14,14 +14,11 @@ use Core\Session;
  * @author Wesllen
  */
 class Login extends BaseModel {
+
     protected $tabela = "usuario";
     
     public function isNull($dados){        
-        if(($dados->usuario === "") || ($dados->password === "")){
-            return TRUE;
-        }else{
-            return False;
-        }
+        return ($dados->usuario === "") || ($dados->password === "");
     }
     
     public function verificarlogin($dados){

@@ -13,13 +13,12 @@ class FornecedorController extends BaseController {
     }
 
     public function cadastrar($request) {
+        $dados = $request->post;
+
         $fornecedor = new Fornecedor();
 
-        if ($fornecedor->cadastrar("")) {
-            $this->redirect("fornecedor", self::SUCCESS, "Cadastrado com sucesso!");
-        } else {
-            $this->redirect("fornecedor", self::DANGER, "OPS, algo deu errado!");
-        }
+        if ($fornecedor->cadastrar($dados)) $this->redirect("admin/fornecedores", self::SUCCESS, "Fornecedor cadastrado com sucesso!");
+        else $this->redirect("fornecedor", self::DANGER, "OPS! Algo deu errado! :/");
     }
 
     

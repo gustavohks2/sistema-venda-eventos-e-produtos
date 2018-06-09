@@ -35,4 +35,9 @@ class AdminController extends BaseController{
         $this->setPageTitle("Admin - Fornecedores");
         $this->Render('admin/fornecedores', 'layoutAdmin');
     }
+
+    public function cadastroFornecedor() {
+        $this->setPageTitle("Admin - Cadastro Fornecedor");
+        $this->Render("admin/cadastroFornecedor", "layoutAdmin");
+    }
 }

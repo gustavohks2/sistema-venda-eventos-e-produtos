@@ -59,7 +59,7 @@ class HomeController extends BaseController {
     public function cadastrar($request) {
         //traz todos as request post enviadas
         $dados = $request->post;
-        //instacia o objeto da model Cadastro
+        //instacia o objeto da model Usuário
         $usuario = new Usuario();
         //verifica se foi cadastrado com sucesso retorna TRUE
         if ($usuario->cadastrar($dados)) {
