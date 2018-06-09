@@ -57,9 +57,12 @@ abstract class BaseModel {
                 case 4:
                     $tabelaPrincipal = $this->tabela4;
                     break;
+                default:
+                    $tabelaPrincipal = $this->tabela;
+                    break;
             }
 
-            $r = $this->con->conecta()->prepare("SELECT {$campos} FROM $tabelaPrincipal {$where_sql};");
+            $r = $this->con->conecta()->prepare("SELECT {$campos} FROM {$tabelaPrincipal} {$where_sql};");
             if ($r->execute()) {
                 return $r->fetchAll();
             } else {
