@@ -1,0 +1,37 @@
+<table>
+   <thead>
+      <tr>
+         <th>Nome</th>
+         <th>Telefone</th>
+         <th>E-mail</th>
+         <th>Razão Social</th>
+         <th>Status</th>
+         <th>Data Bloqueio</th>
+         <th>Ins. Estadual</th>
+      </tr>
+   </thead>
+   <tbody>
+      <?php if ($this->view->fornecedores) :
+               foreach ($this->view->fornecedores as $fornecedor): 
+      ?>
+         <tr>
+            <td><?=$fornecedor->nome?></td>
+            <td><?=$fornecedor->telefone?></td>
+            <td><?=$fornecedor->email?></td>
+            <td><?=$fornecedor->razaoSocial?></td>
+            <td><?=$fornecedor->status?></td>
+            <td><?=$fornecedor->dataBloqueioFornecedor?></td>
+            <td><?=$fornecedor->inscricaoEstadual?></td>
+            <td>
+               <i class="fa fa-ellipsis-h"></i>
+               <!-- <ul class="action-menu">
+                  <li class="action-menu__item"><i class="fa fa-pencil"></i> Editar</li>
+                  <li class="action-menu__item"><i class="fa fa-close"></i> Excluir</li>
+               </ul> -->
+            </td>
+         </tr>
+      <?php    endforeach;
+            endif;
+      ?>
+   </tbody>
+</table>

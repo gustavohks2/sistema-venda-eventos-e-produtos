@@ -42,7 +42,24 @@ abstract class BaseModel {
         try {           
 
             $where_sql = empty($where) ? "" : "WHERE " . $where;
-            $r = $this->con->conecta()->prepare("SELECT {$campos} FROM $this->tabela {$where_sql};");
+            $tabelaPrincipal = "";
+
+            switch($this->tabelaUse) {
+                case 1: 
+                    $tabelaPrincipal = $this->tabela;
+                    break;
+                case 2:
+                    $tabelaPrincipal = $this->tabela2;
+                    break;
+                case 3:
+                    $tabelaPrincipal = $this->tabela3;
+                    break;
+                case 4:
+                    $tabelaPrincipal = $this->tabela4;
+                    break;
+            }
+
+            $r = $this->con->conecta()->prepare("SELECT {$campos} FROM $tabelaPrincipal {$where_sql};");
             if ($r->execute()) {
                 return $r->fetchAll();
             } else {
