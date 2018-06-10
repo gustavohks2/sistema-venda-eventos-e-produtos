@@ -59,6 +59,15 @@ $(document).ready(function() {
       }
    }
 
+   const safeJSONParse = function(data) {
+      try {
+         return $.parseJSON(data);
+      } catch(e) {
+         console.log("Erro na conversão para o formato JSON: " + e);
+      }
+      return false;
+   }
+
    const handleFormData = function(e) {
       e.preventDefault();
 
@@ -66,12 +75,17 @@ $(document).ready(function() {
          type: "POST",
          url: "/login/verificar",
          data: $(this).serialize(),
-         success: function(data) { handleUserLogin($.parseJSON(data)); },
+         success: function(data) { 
+            const parsedData = safeJSONParse(data);
+            
+            if (parsedData !== false && parsedData !== null) logUser(parsedData);
+            else showMessage("Erro ao logar! Tente novamente mais tarde!");
+         },
          error: function(jqXhr, textStatus, errorThrown) { showMessage("Erro: Não foi possível fazer login!") }
       });
    }
 
-   const handleUserLogin = function(login) {
+   const logUser = function(login) {
       DOM.formMessage.text("");
 
       if (!login.success) 
