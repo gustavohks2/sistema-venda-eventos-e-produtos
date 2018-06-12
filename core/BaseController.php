@@ -1,20 +1,9 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace Core;
 
 use Core\Session;
 use Core\FlashMessage;
-/**
- * Description of BaseController
- *
- * @author Wesllen
- */
+
 class BaseController {
 
     protected $view;

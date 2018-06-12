@@ -1,0 +1,19 @@
+<form method="POST" action="/produto/cadastrar">
+   <input type="text" name="nome" placeholder="Nome">
+   <input type="text" name="fabricante" placeholder="Fabricante">
+   <textarea name="descricao" id="" cols="30" rows="10"></textarea>
+   <input type="text" name="peso" placeholder="Peso">
+   <input type="text" name="valorVenda" placeholder="Valor venda">
+   <input type="text" name="valorComprado" placeholder="Valor Comprado">
+   <input type="date" name="dataValidade" placeholder="Data de Validade">
+
+   <select name="fornecedor">
+      <?php foreach($this->view->fornecedores as $fornecedor) : ?>
+         <option value="<?= $fornecedor->idFornecedor ?>">
+            <?= $fornecedor->nome ?>
+         </option>
+      <?php endforeach; ?>
+   </select>
+
+   <button type="submit">Cadastrar</button>
+</form>

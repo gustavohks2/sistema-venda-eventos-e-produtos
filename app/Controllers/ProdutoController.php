@@ -20,12 +20,13 @@ class ProdutoController extends BaseController {
     }
     
     public function cadastrar($request) {
+        $dados = $request->post;
+
         $produto = new Produto();
 
-        if ($produto->cadastrar("")) {
-            $this->redirect("produto", self::SUCCESS, "Cadastrado com sucesso!");
-        } else {
-            $this->redirect("produto", self::DANGER, "OPS, algo deu errado!");
-        }
+        if ($produto->cadastrar($dados)) 
+            $this->redirect("admin/produtos", self::SUCCESS, "Cadastrado com sucesso!");
+
+        $this->redirect("admin/produtos", self::DANGER, "OPS, algo deu errado!");
     }
 }

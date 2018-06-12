@@ -14,9 +14,9 @@ class Produto extends BaseModel {
         $array = array(
             "0" =>
             array(
-                "nome" => "Leite condensado", "fabricante" => "Itambé", "peso" => "3.55",
-                "descricao" => "Nenhuma", "valorVenda" => "3.99", "valorComprado" => "1.99",
-                "dataValidade" => "1999-10-02", "fkFornecedor" => "1"
+                "nome" => $dados->nome, "fabricante" => $dados->fabricante, "peso" => $dados->peso,
+                "descricao" => $dados->descricao, "valorVenda" => $dados->valorVenda, "valorComprado" => $dados->valorComprado,
+                "dataValidade" => $dados->dataValidade, "fkFornecedor" => $dados->fornecedor
             )
         );
 
