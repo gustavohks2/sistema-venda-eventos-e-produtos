@@ -1,0 +1,30 @@
+.admin-content {
+   padding: 6rem;
+   background-color: $color-white;
+   border: 1px solid lighten($color-gray-light, 10%);
+
+   &__table {
+      width: 100%;
+      font-size: 1.4rem;
+      text-align: center;
+      letter-spacing: .09rem;
+      border-collapse: collapse;
+
+      & th {
+         background-color: #12ddce;
+         color: $color-white; 
+      }
+
+      & th, & td { padding: 1.2rem 0; }
+
+      & tr td:last-child { 
+         cursor: pointer; 
+         padding-left: .5rem;
+         padding-right: .5rem;
+      }
+
+      & td { border: 1px solid lighten($color-gray-light, 5%); }
+
+      & tr:hover td { background-color: lighten($color-gray-light, 15%); }
+   }
+}

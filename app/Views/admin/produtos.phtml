@@ -1,37 +1,38 @@
-
-<table>
-   <thead>
-      <tr>
-         <th>Nome</th>
-         <th>Fabricante</th>
-         <th>Peso</th>
-         <th>Valor Venda</th>
-         <th>Valor Comprado</th>
-         <th>Data Validade</th>
-      </tr>
-   </thead>
-   <tbody>
-      <?php if ($this->view->produtos) :
-               foreach ($this->view->produtos as $produto): 
-      ?>
+<section class="admin-content">
+   <table class="admin-content__table">
+      <thead>
          <tr>
-            <td><?=$produto->nome?></td>
-            <td><?=$produto->fabricante?></td>
-            <td><?=$produto->peso?></td>
-            <td><?=$produto->valorVenda?></td>
-            <td><?=$produto->valorComprado?></td>
-            <td><?=$produto->dataValidade?></td>
-            <td>
-               <i class="fa fa-ellipsis-h"></i>
-               <!-- <ul class="action-menu">
-                  <li class="action-menu__item"><i class="fa fa-pencil"></i> Editar</li>
-                  <li class="action-menu__item"><i class="fa fa-close"></i> Excluir</li>
-               </ul> -->
-            </td>
+            <th>Nome</th>
+            <th>Fabricante</th>
+            <th>Peso</th>
+            <th>Valor Venda</th>
+            <th>Valor Comprado</th>
+            <th>Data Validade</th>
          </tr>
-      <?php 
-               endforeach; 
-            endif;
-      ?>
-   </tbody>
-</table>
+      </thead>
+      <tbody>
+         <?php if ($this->view->produtos) :
+                  foreach ($this->view->produtos as $produto): 
+         ?>
+            <tr>
+               <td><?=$produto->nome?></td>
+               <td><?=$produto->fabricante?></td>
+               <td><?=$produto->peso?></td>
+               <td><?=$produto->valorVenda?></td>
+               <td><?=$produto->valorComprado?></td>
+               <td><?=$produto->dataValidade?></td>
+               <td>
+                  <i class="fa fa-ellipsis-h"></i>
+                  <!-- <ul class="action-menu">
+                     <li class="action-menu__item"><i class="fa fa-pencil"></i> Editar</li>
+                     <li class="action-menu__item"><i class="fa fa-close"></i> Excluir</li>
+                  </ul> -->
+               </td>
+            </tr>
+         <?php 
+                  endforeach; 
+               endif;
+         ?>
+      </tbody>
+   </table>
+</section>

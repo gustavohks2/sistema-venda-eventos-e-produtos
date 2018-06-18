@@ -18,7 +18,7 @@ body {
   font-family: "Dosis", "Lato", "Roboto", sans-serif; }
 
 .body--gray {
-  background-color: #fcfcfc; }
+  background-color: #fafafa; }
 
 .body--padded {
   padding: 12rem 4rem 0 12rem; }
@@ -590,6 +590,30 @@ a:link, .header__box-text a:active {
       backface-visibility: visible !important;
       animation-name: flipInX;
       animation-duration: .8s; }
+
+.admin-content {
+  padding: 6rem;
+  background-color: #ffffff;
+  border: 1px solid #ebebeb; }
+  .admin-content__table {
+    width: 100%;
+    font-size: 1.4rem;
+    text-align: center;
+    letter-spacing: .09rem;
+    border-collapse: collapse; }
+    .admin-content__table th {
+      background-color: #12ddce;
+      color: #ffffff; }
+    .admin-content__table th, .admin-content__table td {
+      padding: 1.2rem 0; }
+    .admin-content__table tr td:last-child {
+      cursor: pointer;
+      padding-left: .5rem;
+      padding-right: .5rem; }
+    .admin-content__table td {
+      border: 1px solid #dedede; }
+    .admin-content__table tr:hover td {
+      background-color: #f7f7f7; }
 
 .row {
   margin: 0 auto;
