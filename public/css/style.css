@@ -120,6 +120,13 @@ ul, li {
 .u-text-center {
   text-align: center !important; }
 
+.u-padding-x-big {
+  padding: 0 15rem !important; }
+
+.u-push-right {
+  display: block;
+  float: right !important; }
+
 .u-divisor {
   display: block;
   height: 1px;
@@ -330,69 +337,40 @@ a:link, .header__box-text a:active {
     -o-border-radius: 50%;
     border-radius: 50%; }
 
-.form {
+.form::after {
+  content: "";
+  clear: both;
+  display: table; }
+
+.form__group {
   width: 100%;
-  margin: 0 auto; }
-  .form__group {
-    width: 40rem;
-    margin: 0 auto;
-    height: 5rem;
-    position: relative;
-    margin-bottom: 3rem; }
-  .form__label {
-    left: 1rem;
-    bottom: 1.4rem;
-    font-size: 1.4rem;
-    position: absolute;
-    transition: opacity .1s linear, transform .1s linear, visibility .85s linear;
-    color: #7e7e7e; }
-  .form__control {
-    width: 100%;
-    height: 100%;
-    border: none;
-    box-shadow: none;
-    font-weight: 300;
-    font-size: 1.55rem;
-    position: relative;
-    padding: .5rem 1rem;
-    color: #7e7e7e;
-    background-color: #ffffff; }
-  .form__border-bottom {
-    position: absolute;
-    bottom: -2px;
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #d6d6d6; }
-    .form__border-bottom::before, .form__border-bottom::after {
-      content: "";
-      height: 2px;
-      width: 0;
-      top: 0;
-      position: absolute;
-      background: #0471d8;
-      transition: all .1s linear; }
-    .form__border-bottom::before {
-      left: 50%; }
-    .form__border-bottom::after {
-      right: 50%; }
-  .form__control:placeholder-shown + .form__label {
-    opacity: 0;
-    font-size: 1.8rem;
-    visibility: hidden; }
-  .form__control:not(:placeholder-shown) + .form__label {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-3rem); }
-  .form__control:focus ~ .form__border-bottom::before {
-    width: 50%; }
-  .form__control:focus ~ .form__border-bottom::after {
-    width: 50%; }
-  .form__button {
-    width: 30rem;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 5rem; }
+  display: inline-block;
+  margin-bottom: 2rem; }
+
+.form__label {
+  display: block;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  margin-bottom: .8rem;
+  color: #999999; }
+
+.form__control {
+  width: 100%;
+  height: 4.5rem;
+  padding: 0 2rem;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  font-family: inherit;
+  color: #989898;
+  border: 1px solid #dedede;
+  background-color: #f9f9f9; }
+  .form__control--textarea {
+    height: 10rem;
+    resize: vertical;
+    font-size: 1.6rem;
+    padding: 2rem 2rem;
+    font-family: inherit;
+    letter-spacing: 1px; }
 
 .alert-box {
   left: 50%;

@@ -1,30 +1,59 @@
 <section class="admin-content">
-   <form class="admin-content__form" method="POST" action="/produto/cadastrar">
+   <form class="form" method="POST" action="/produto/cadastrar">
 
-      <div class="admin-content__form-group">
-         <label>Nome</label>
-         <input type="text" name="nome">
+      <div class="row">
+         <div class="col-1-of-2">
+            <div class="form__group">
+               <label class="form__label" for="nome">Nome</label>
+               <input id="nome" class="form__control" type="text" name="nome">
+            </div>
+
+            <div class="form__group">
+               <label class="form__label" for="fabricante">Fabricante</label>
+               <input id="fabricante" class="form__control" type="text" name="fabricante">
+            </div>
+            
+            <div class="form__group">
+               <label class="form__label" for="descricao">Descrição</label>
+               <textarea id="descricao" class="form__control form__control--textarea" name="descricao"></textarea>
+            </div>
+
+            <div class="form__group">
+               <label class="form__label" for="peso">Peso</label>
+               <input id="peso" class="form__control" type="text" name="peso">
+            </div>
+         </div>
+
+         <div class="col-1-of-2">
+            <div class="form__group">
+               <label class="form__label" for="valor-venda">Valor de venda</label>
+               <input id="valor-venda" class="form__control" type="text" name="valorVenda">
+            </div>
+
+            <div class="form__group">
+               <label class="form__label" for="valor-comprado">Valor comprado</label>
+               <input id="valor-comprado" class="form__control" type="text" name="valorComprado">
+            </div>
+            
+
+            <div class="form__group">
+               <label class="form__label" for="valor-venda">Data de Validade</label>
+               <input id="data-validade" class="form__control" type="date" name="dataValidade">
+            </div>
+
+            <div class="form__group">
+               <label class="form__label" for="fornecedor">Fornecedor</label>
+               <select id="fornecedor" class="form__control form__control--select" name="fornecedor">
+                  <?php foreach($this->view->fornecedores as $fornecedor) : ?>
+                     <option value="<?= $fornecedor->idFornecedor ?>">
+                        <?= $fornecedor->nome ?>
+                     </option>
+                  <?php endforeach; ?>
+               </select>
+            </div>
+         </div>
       </div>
 
-      <div class="admin-content__form-group">
-         <label>Fabricante</label>
-         <input type="text" name="fabricante" placeholder="Fabricante">
-      </div>
-      
-      <textarea name="descricao" id="" cols="30" rows="10"></textarea>
-      <input type="text" name="peso" placeholder="Peso">
-      <input type="text" name="valorVenda" placeholder="Valor venda">
-      <input type="text" name="valorComprado" placeholder="Valor Comprado">
-      <input type="date" name="dataValidade" placeholder="Data de Validade">
-
-      <select name="fornecedor">
-         <?php foreach($this->view->fornecedores as $fornecedor) : ?>
-            <option value="<?= $fornecedor->idFornecedor ?>">
-               <?= $fornecedor->nome ?>
-            </option>
-         <?php endforeach; ?>
-      </select>
-
-      <button type="submit">Cadastrar</button>
+      <button class="btn btn--blue u-push-right" type="submit">Cadastrar &nbsp;<i class="fa fa-arrow-right"></i> </button>
    </form>
 </section>

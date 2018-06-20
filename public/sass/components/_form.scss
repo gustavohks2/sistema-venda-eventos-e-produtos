@@ -1,82 +1,38 @@
 .form {
-   width: 100%;  
-   margin: 0 auto;
+   @include clearfix;
 
    &__group {
-      width: 40rem;
-      margin: 0 auto;
-      height: 5rem;
-      position: relative;
-      margin-bottom: 3rem;
-   }
+      width: 100%;
+      display: inline-block;
+      margin-bottom: 2rem;
+   }  
 
    &__label {
-      left: 1rem;
-      bottom: 1.4rem;
-      font-size: 1.4rem;
-      position: absolute;
-      transition: opacity .1s linear,
-                  transform .1s linear,
-                  visibility .85s linear;
-      color: $color-gray-light-2;
+      display: block;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      margin-bottom: .8rem;
+      color: darken($color-gray-light, 22%);
    }
 
    &__control {
       width: 100%;
-      height: 100%;
-      border: none;
-      box-shadow: none;
-      font-weight: 300;
-      font-size: 1.55rem;
-      position: relative;
-      padding: .5rem 1rem;
-      color: $color-gray-light-2;
-      background-color: $color-white;
-   }
+      height: 4.5rem;
+      padding: 0 2rem;
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+      font-family: inherit;
+      color: lighten($color-gray-light-2, 10%);
+      border: 1px solid lighten($color-gray-light, 5%); 
+      background-color: lighten($color-gray-light, 15.5%);
 
-   &__border-bottom {
-      position: absolute;
-      bottom: -2px;
-      display: block;
-      width: 100%;
-      height: 2px;
-      background-color: lighten($color-gray-light, 2%);
-
-      &::before, &::after {
-         content: "";
-         height: 2px;
-         width: 0;
-         top: 0;
-         position: absolute;
-         background: $color-primary;
-         transition: all .1s linear;
+      &--textarea {
+         height: 10rem;
+         resize: vertical;
+         font-size: 1.6rem;
+         padding: 2rem 2rem;
+         font-family: inherit;
+         letter-spacing: 1px; 
       }
-
-      &::before { left: 50%; }
-      &::after { right: 50%; }
-   }
-
-   &__control:placeholder-shown + &__label {
-      opacity: 0;
-      font-size: 1.8rem;
-      visibility: hidden;
-   }
-
-   &__control:not(:placeholder-shown) + &__label {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(-3rem);
-   }
-
-   &__control:focus ~ &__border-bottom {
-      &::before { width: 50%; }
-      &::after { width: 50%; }
-   }
-
-   &__button {
-      width: 30rem;
-      display: block;
-      margin: 0 auto;
-      margin-bottom: 5rem;
    }
 }
