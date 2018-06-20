@@ -1,0 +1,61 @@
+.table {
+   width: 100%;
+   font-size: 1.4rem;
+   text-align: center;
+   letter-spacing: .09rem;
+   border-collapse: collapse;
+
+   th {
+      background-color: $color-green-flat;
+      color: $color-white; 
+   }
+
+   th, td { padding: 1.2rem 0; }
+
+   tr td:last-child { 
+      cursor: pointer; 
+      padding-left: .5rem;
+      padding-right: .5rem;
+   }
+
+   td { 
+      color: lighten($color-gray-dark-2, 3%);
+      border: 1px solid lighten($color-gray-light, 5%); 
+   }
+
+   tr:hover td { background-color: lighten($color-gray-light, 14%);  }
+
+   &__toggler { position: relative; }
+
+   &__options-group {
+      top: 100%;
+      right: -.1rem;
+      opacity: 0;
+      z-index: 2222;
+      position: absolute;
+      visibility: hidden;
+   }
+
+   &__option {
+      width: 10rem;
+      height: 4rem;
+      line-height: 4rem;
+      background-color: $color-white;
+      border-top: 1px solid lighten($color-gray-light, 5%);
+      border-left: 1px solid lighten($color-gray-light, 5%); 
+      border-right: 1px solid lighten($color-gray-light, 5%); 
+   }
+   
+   &__option:not(:first-child) {
+      border-bottom: 1px solid lighten($color-gray-light, 5%);
+   }
+
+   &__option:hover {
+      background-color: lighten($color-gray-light, 14%);
+   }
+
+   &__toggler:hover &__options-group {
+      opacity: 1;
+      visibility: visible;
+   }
+}

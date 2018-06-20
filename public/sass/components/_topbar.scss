@@ -2,6 +2,7 @@
    top: 0;
    right: 0;
    height: 8rem;
+   z-index: 9999;
    position: fixed;
    padding-right: 10rem;
    width: calc(100% - 8rem);
@@ -74,9 +75,9 @@
    &__nav-menu {
       top: 110%;
       opacity: 0;
-      visibility: hidden;
       width: 20rem;
       overflow: hidden;
+      visibility: hidden;
       @include horizontal-centered;
       background-color: $color-white;
       box-shadow: 0 0 2rem rgba($color-black, .13);

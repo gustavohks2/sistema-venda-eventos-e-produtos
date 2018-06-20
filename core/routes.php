@@ -11,10 +11,10 @@ $routes[] = ['/admin', 'AdminController@index'];
 $routes[] = ['/admin/produtos', 'AdminController@manterProdutos'];
 $routes[] = ['/admin/fornecedores', 'AdminController@manterFornecedores'];
 
-$routes[] = ['/admin/produto/cadastro', 'AdminController@cadastroProduto'];
+$routes[] = ['/admin/cadastro/produto', 'AdminController@cadastroProduto'];
 $routes[] = ['/produto/cadastrar', 'ProdutoController@cadastrar'];
 
-$routes[] = ['/admin/fornecedor/cadastro', 'AdminController@cadastroFornecedor'];
+$routes[] = ['/admin/cadastro/fornecedor', 'AdminController@cadastroFornecedor'];
 $routes[] = ['/fornecedor/cadastrar', 'FornecedorController@cadastrar'];
 $routes[] = ['/fornecedor', 'FornecedorController@index'];
 

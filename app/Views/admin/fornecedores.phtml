@@ -1,5 +1,5 @@
 <section class="admin-content">
-      <table class="admin-content__table">
+      <table class="table">
       <thead>
          <tr>
             <th>Nome</th>
@@ -23,12 +23,12 @@
                <td><?=$fornecedor->status?></td>
                <td><?=date("d/m/Y", strtotime($fornecedor->dataBloqueioFornecedor))?></td>
                <td><?=$fornecedor->inscricaoEstadual?></td>
-               <td>
-               <i class="fa fa-ellipsis-h"></i>
-               <!-- <ul class="action-menu">
-                     <li class="action-menu__item"><i class="fa fa-pencil"></i> Editar</li>
-                     <li class="action-menu__item"><i class="fa fa-close"></i> Excluir</li>
-               </ul> -->
+               <td class="table__toggler">
+                  <i class="fa fa-ellipsis-h"></i>
+                  <ul class="table__options-group">
+                     <li class="table__option"><i class="fa fa-pencil"></i> Editar</li>
+                     <li class="table__option"><i class="fa fa-close"></i> Excluir</li>
+                  </ul>
                </td>
          </tr>
          <?php    endforeach;
@@ -36,4 +36,9 @@
          ?>
       </tbody>
    </table>
+
+   <a href="/admin/cadastro/fornecedor" class="admin-content__plus-button u-margin-top-med">
+      <i class="fa fa-plus"></i>
+   </a>
+
 </section>
