@@ -1,0 +1,79 @@
+<section class="admin-content">
+   <form class="form" method="POST" action="/fornecedor/cadastrar">
+      <div class="row">
+         <div class="col-1-of-2">
+            <div class="form__group">
+               <label class="form__label" for="nome">Nome</label>
+               <input id="nome" class="form__control" type="text" name="nome">
+            </div>
+
+            <div class="form__group">
+               <label class="form__label" for="telefone">Telefone</label>
+               <input id="telefone" class="form__control" type="text" name="telefone" data-input="telefone">
+            </div>
+
+            <div class="form__group">
+               <label class="form__label" for="email">E-mail</label>
+               <input id="email" class="form__control" type="text" name="email">
+            </div>
+
+            <div class="form__group">
+               <label class="form__label" for="razao-social">Razão Social</label>
+               <input id="razao-social" class="form__control" type="text" name="razaoSocial">
+            </div>
+
+            <div class="form__group">
+               <label class="form__label" for="inscricao-estadual">Inscrição Estadual</label>
+               <input id="inscricao-estadual" class="form__control" type="text" name="inscricaoEstadual">
+            </div>
+         </div>
+         <div class="col-1-of-2">
+            <div class="form__group">
+               <label class="form__label" for="cep">CEP</label>
+               <input id="cep" class="form__control" type="text" name="cep" data-input="CEP">
+            </div>
+
+            <div class="form__group">
+               <label class="form__label" for="endereco">Endereço</label>
+               <input id="endereco" class="form__control" type="text" name="endereco">
+            </div>
+            
+            <div class="form__group">
+               <label class="form__label" for="endereco">Complemento</label>
+               <input id="complemento" class="form__control" type="text" name="complemento">
+            </div>
+
+            <div class="form__group">
+               <label class="form__label" for="numero">Número</label>
+               <input id="numero" class="form__control" type="text" name="numero">
+            </div>
+
+            <div class="form__group">
+               <label class="form__label" for="bairro">Bairro</label>
+               <input id="bairro" class="form__control" type="text" name="bairro">
+            </div>
+
+            <div class="row no-gap">
+               <div class="col-1-of-4">
+                  <div class="form__group">
+                     <label class="form__label" for="uf">UF</label>
+                     <input id="uf" class="form__control" type="text" name="uf">
+                  </div>
+               </div>
+               <div class="col-3-of-4">
+                  <div class="form__group">
+                     <label class="form__label" for="cidade">Cidade</label>
+                     <input id="cidade" class="form__control" type="text" name="cidade">
+                  </div>
+               </div>
+            </div>
+            
+            <div class="form__group">
+               <label class="form__label" for="logradouro">Logradouro</label>
+               <input id="logradouro" class="form__control" type="text" name="logradouro">
+            </div>
+         </div>
+      </div>
+      <button class="btn btn--blue pull-right" type="submit">Cadastrar</button>
+   </form>
+</section>

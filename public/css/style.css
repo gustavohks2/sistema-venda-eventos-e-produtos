@@ -650,6 +650,8 @@ a:link, .header__box-text a:active {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 3.5rem; }
+  .row.no-gap {
+    margin-bottom: 0 !important; }
   .row .col-1-of-2 {
     width: calc((100% - 3.5rem) / 2); }
   .row .col-1-of-3 {

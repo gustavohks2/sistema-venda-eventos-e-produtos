@@ -41,7 +41,7 @@ class AdminController extends BaseController{
             $this->redirect("", self::WARNING, "Você não tem permissão para acessar a página!");
 
         $this->setPageTitle("Admin - Cadastro Fornecedor");
-        $this->Render("admin/cadastroFornecedor", "layoutAdmin");
+        $this->Render("fornecedor/cadastro", "layoutAdmin");
     }
 
     public function cadastroProduto() {

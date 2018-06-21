@@ -12,6 +12,8 @@
       &:not(:last-child) { margin-right: $horizontal-gap; }
    }
 
+   &.no-gap { margin-bottom: 0 !important; }
+
    .col-1-of-2 { width: calc((100% - #{$horizontal-gap}) / 2); }
 
    .col-1-of-3 { width: calc((100% - 2 * #{$horizontal-gap}) / 3); }
