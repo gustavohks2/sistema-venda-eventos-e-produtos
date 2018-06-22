@@ -5,7 +5,7 @@
          <div class="col-1-of-2">
             <div class="form__group">
                <label class="form__label" for="nome">Nome</label>
-               <input id="nome" class="form__control" type="text" name="nome">
+               <input id="nome" class="form__control" type="text" name="nome" required>
             </div>
 
             <div class="form__group">
@@ -18,27 +18,38 @@
                <textarea id="descricao" class="form__control form__control--textarea" name="descricao"></textarea>
             </div>
 
-            <div class="form__group">
-               <label class="form__label" for="peso">Peso</label>
-               <input id="peso" class="form__control" type="text" name="peso">
+            <div class="row no-gap">
+               <div class="col-1-of-2">
+                  <div class="form__group">
+                     <label class="form__label" for="peso">Peso (kg)</label>
+                     <input id="peso" class="form__control" type="text" name="peso">
+                  </div>
+               </div>
+
+               <div class="col-1-of-2">
+                  <div class="form__group">
+                     <label class="form__label" for="valor-venda">Data de Validade</label>
+                     <input id="data-validade" class="form__control" type="date" name="dataValidade">
+                  </div>
+               </div>
             </div>
          </div>
 
          <div class="col-1-of-2">
-            <div class="form__group">
-               <label class="form__label" for="valor-venda">Valor de venda</label>
-               <input id="valor-venda" class="form__control" type="text" name="valorVenda">
-            </div>
+            <div class="row no-gap">
+               <div class="col-1-of-2">
+                  <div class="form__group">
+                     <label class="form__label" for="valor-comprado">Valor comprado (R$)</label>
+                     <input id="valor-comprado" class="form__control" type="text" name="valorComprado" required>
+                  </div>
+               </div>
 
-            <div class="form__group">
-               <label class="form__label" for="valor-comprado">Valor comprado</label>
-               <input id="valor-comprado" class="form__control" type="text" name="valorComprado">
-            </div>
-            
-
-            <div class="form__group">
-               <label class="form__label" for="valor-venda">Data de Validade</label>
-               <input id="data-validade" class="form__control" type="date" name="dataValidade">
+               <div class="col-1-of-2">
+                  <div class="form__group">
+                     <label class="form__label" for="valor-venda">Valor de venda (R$)</label>
+                     <input id="valor-venda" class="form__control" type="text" name="valorVenda" required>
+                  </div>
+               </div>
             </div>
 
             <div class="form__group">

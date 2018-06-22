@@ -29,10 +29,11 @@
       &--textarea {
          height: 10rem;
          resize: vertical;
+         max-height: 18rem;
          font-size: 1.6rem;
          padding: 2rem 2rem;
+         letter-spacing: 1px;
          font-family: inherit;
-         letter-spacing: 1px; 
       }
    }
 }
