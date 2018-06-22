@@ -61,6 +61,22 @@ abstract class BaseModel {
             echo $ex->getMessage();
         }
     }
+    
+    public function readChave($campos = "*",$campos_values, $where = null) {
+        try {
+            $where_sql = empty($where) ? "" : "WHERE " . $where;
+            $r = $this->con->conecta()->prepare("SELECT {$campos} FROM $this->tabela  {$campos_values} {$where_sql};");
+//            print_r($r); die();
+            if ($r->execute()) {
+//                print_r($r->fetchAll()); die();
+                return $r->fetchAll();
+            } else {
+                print_r($r->errorInfo());
+            }
+        } catch (PDOException $ex) {
+            echo $ex->getMessage();
+        }
+    }
 
     public function insert(array $campos_values) {
         //atribui a uma variavel a quantidade de tabelas a ser usadas
@@ -243,6 +259,46 @@ abstract class BaseModel {
                 }
                 break;
         }
+    }
+    
+    public function update(array $campos_values, $where = null) {
+        try {
+            $where_sql = empty($where) ? "" : "WHERE " . $where;
+
+            $sql_text_array = array();
+            foreach ($campos_values as $campo => $valor) {
+                array_push($sql_text_array, "{$campo}='{$valor}'");
+            }
+            $sql_text = implode(",", $sql_text_array);
+
+            $r = $this->con->conecta()->prepare("UPDATE {$this->tabela} SET {$sql_text} {$where_sql}");
+            $r->execute();
+            if ($r->rowCount()) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        } catch (\PDOException $ex) {
+            echo $ex->getMessage();
+        }
+    }
+    
+    public function delete($where_sql) {
+        try {
+            $r = $this->con->conecta()->prepare("DELETE FROM $this->tabela WHERE {$where_sql}");
+            
+
+            $r->execute();
+            if($r->rowCount()) {
+              return TRUE;  
+            } else {
+                return FALSE; 
+            }
+        } catch (\PDOException $ex) {
+             echo $ex->getMessage();
+        }
+        
+        
     }
 
 }

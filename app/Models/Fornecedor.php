@@ -33,5 +33,21 @@ class Fornecedor extends BaseModel {
     public function listar() {
         return ($fornecedores = $this->read("*")) ? $fornecedores : FALSE;
     }
+    
+    public function atualizar($dados){
+        $array = array(
+                "nome_produto" => $dados->nome, "fabricante" => $dados->fabricante, "peso" => $dados->peso,
+                "descricao" => $dados->descricao, "valorVenda" => $dados->valorVenda, "valorComprado" => $dados->valorComprado,
+                "dataValidade" => $dados->dataValidade, "fkFornecedor" => $dados->fornecedor
+        );
+        $where = "	idFornecedor = $dados->idProduto";
+        return ($produtos = $this->update($array, $where)) ? $produtos : FALSE;
+        
+    }
+    
+    public function excluir($id){
+        $where = "	idFornecedor = $id";
+        return ($produto = $this->delete($where)) ? $produto : FALSE;
+    }
 
 }

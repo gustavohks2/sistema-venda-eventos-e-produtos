@@ -14,7 +14,7 @@ class Produto extends BaseModel {
         $array = array(
             "0" =>
             array(
-                "nome" => $dados->nome, "fabricante" => $dados->fabricante, "peso" => $dados->peso,
+                "nome_produto" => $dados->nome, "fabricante" => $dados->fabricante, "peso" => $dados->peso,
                 "descricao" => $dados->descricao, "valorVenda" => $dados->valorVenda, "valorComprado" => $dados->valorComprado,
                 "dataValidade" => $dados->dataValidade, "fkFornecedor" => $dados->fornecedor
             )
@@ -26,6 +26,26 @@ class Produto extends BaseModel {
 
     public function listar() {
         return ($produtos = $this->read("*")) ? $produtos : FALSE;
+    }
+    
+    public function listraOneChave($where){
+        return ($produtos = $this->readChave("*", $where)) ? $produtos : FALSE;
+    }
+    
+    public function atualizar($dados){
+        $array = array(
+                "nome_produto" => $dados->nome, "fabricante" => $dados->fabricante, "peso" => $dados->peso,
+                "descricao" => $dados->descricao, "valorVenda" => $dados->valorVenda, "valorComprado" => $dados->valorComprado,
+                "dataValidade" => $dados->dataValidade, "fkFornecedor" => $dados->fornecedor
+        );
+        $where = "idProduto = $dados->idProduto";
+        return ($produtos = $this->update($array, $where)) ? $produtos : FALSE;
+        
+    }
+    
+    public function excluir($id){
+        $where = "idProduto = $id";
+        return ($produto = $this->delete($where)) ? $produto : FALSE;
     }
 
 }
