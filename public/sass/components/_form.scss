@@ -26,6 +26,10 @@
       border: 1px solid lighten($color-gray-light, 5%); 
       background-color: lighten($color-gray-light, 15.5%);
 
+      &:focus, &:invalid, &:valid { box-shadow: none; }
+
+      &:focus { outline: 2px solid #07d7df; }
+
       &--textarea {
          height: 10rem;
          resize: vertical;

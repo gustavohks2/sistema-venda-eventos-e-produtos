@@ -13,10 +13,17 @@
       line-height: 6rem;
       text-align: center;
       color: $color-white;
-      box-shadow: 0 0 2.5rem rgba(#06aa9c, .35);
       @include circle-shaped;
+      box-shadow: 0 0 2.5rem rgba(#06aa9c, .35);
       background-image: linear-gradient(to right bottom, 
-         rgba(44, 235, 171, 0.5), 
-         rgba(7, 216, 223, 0.5));
+      rgba(44, 235, 171, 0.5), 
+      rgba(7, 216, 223, 0.5));
+      transition: transform .4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+                  box-shadow .35s linear;
+   }
+
+   &__plus-button:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 3.5rem rgba(#06aa9c, .3);
    }
 }
