@@ -1,6 +1,6 @@
 <?php $produto = $this->view->produto ?>
 <section class="admin-content">
-    <form class="form" method="POST" action="admin/produto/editar/salvar">
+    <form class="form" method="POST" action="/produto/editar/salvar">
       <div class="row">
          <div class="col-1-of-2">
             <div class="form__group">
@@ -39,7 +39,7 @@
 
             <div class="form__group">
                <label class="form__label" for="valor-venda">Data de Validade</label>
-               <input id="data-validade" class="form__control" type="date" name="dataValidade" value="<?=$ListarProduto->dataValidade?>">
+               <input id="data-validade" class="form__control" type="date" name="dataValidade" value="<?=$produto->dataValidade?>" data-input="date">
             </div>
             <div class="form__group">
                <label class="form__label" for="fornecedor">Fornecedor</label>

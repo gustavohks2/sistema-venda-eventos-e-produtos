@@ -20,8 +20,8 @@ $routes[] = ['/produto/editar/salvar', 'ProdutoController@cadastrarEditarSalvar'
 $routes[] = ['/admin/cadastro/fornecedor', 'AdminController@cadastroFornecedor'];
 $routes[] = ['/fornecedor/cadastrar', 'FornecedorController@cadastrar'];
 $routes[] = ['/fornecedor', 'FornecedorController@index'];
-$routes[] = ['/fornecedor/editar', 'FornecedorController@Editar'];
-$routes[] = ['/fornecedor/excluir', 'FornecedorController@Excluir'];
+$routes[] = ['/admin/fornecedor/editar', 'FornecedorController@Editar'];
+$routes[] = ['/admin/fornecedor/excluir', 'FornecedorController@Excluir'];
 $routes[] = ['/fornecedor/editar/salvar', 'FornecedorController@EditarSalvar'];
 
 return $routes;

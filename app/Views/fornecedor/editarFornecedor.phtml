@@ -1,0 +1,117 @@
+<?php $fornecedor = $this->view->fornecedor ?>
+
+<section class="admin-content">
+   <form class="form" method="POST" action="/fornecedor/editar/salvar">
+      <div class="row">
+         <div class="col-1-of-2">
+            <div class="form__group">
+               <label class="form__label" for="nome">Nome</label>
+               <input id="nome" class="form__control" type="text" name="nome" value="<?=$fornecedor->nome?>" required>
+            </div>
+
+            <div class="form__group">
+               <label class="form__label" for="telefone">Telefone</label>
+               <input id="telefone" class="form__control" type="text" name="telefone" data-input="telefone" value="<?=$fornecedor->telefone?>" required>
+            </div>
+
+            <div class="form__group">
+               <label class="form__label" for="email">E-mail</label>
+               <input id="email" class="form__control" type="text" name="email" value="<?=$fornecedor->email?>">
+            </div>
+
+            <div class="form__group">
+               <label class="form__label" for="razao-social">Razão Social</label>
+               <input id="razao-social" class="form__control" type="text" name="razaoSocial" value="<?=$fornecedor->razaoSocial?>">
+            </div>
+
+            <div class="form__group">
+               <label class="form__label" for="inscricao-estadual">Inscrição Estadual</label>
+               <input id="inscricao-estadual" class="form__control" type="text" name="inscricaoEstadual" value="<?=$fornecedor->inscricaoEstadual?>" required>
+            </div>
+         </div>
+         <div class="col-1-of-2">
+
+            <div class="row no-gap">
+               <div class="col-1-of-2">
+                  <div class="form__group">
+                     <label class="form__label" for="numero">Número</label>
+                     <input id="numero" class="form__control" type="text" name="numero" value="<?=$fornecedor->numero?>" required>
+                  </div>
+               </div>
+               
+               <div class="col-1-of-2">
+                  <div class="form__group">
+                     <label class="form__label" for="cep">CEP</label>
+                     <input id="cep" class="form__control" type="text" name="cep" data-input="CEP" value="<?=$fornecedor->cep?>" required>
+                  </div>
+               </div>
+            </div>
+
+            <div class="form__group">
+               <label class="form__label" for="endereco">Endereço</label>
+               <input id="endereco" class="form__control" type="text" name="endereco" value="<?=$fornecedor->endereco?>" required>
+            </div>
+            
+            <div class="form__group">
+               <label class="form__label" for="endereco">Complemento</label>
+               <input id="complemento" class="form__control" type="text" name="complemento" value="<?=$fornecedor->complemento?>">
+            </div>
+
+            <div class="form__group">
+               <label class="form__label" for="bairro">Bairro</label>
+               <input id="bairro" class="form__control" type="text" name="bairro" value="<?=$fornecedor->bairro?>" required>
+            </div>
+
+            <div class="row no-gap">
+               <div class="col-1-of-3">
+                  <div class="form__group">
+                     <label class="form__label" for="uf">UF</label>
+                     <select id="uf" class="form__control" type="text" name="uf" required>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                     </select>
+                  </div>
+               </div>
+
+               <div class="col-2-of-3">
+                  <div class="form__group">
+                     <label class="form__label" for="cidade">Cidade</label>
+                     <input id="cidade" class="form__control" type="text" name="cidade" value="<?=$fornecedor->cidade?>" required>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="form__group">
+               <label class="form__label" for="logradouro">Logradouro</label>
+               <input id="logradouro" class="form__control" type="text" name="logradouro" value="<?=$fornecedor->logradouro?>">
+            </div>
+         </div>
+      </div>
+      <button class="btn btn--blue pull-right" type="submit">Editar</button>
+   </form>
+</section>

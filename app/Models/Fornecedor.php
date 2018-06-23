@@ -33,16 +33,21 @@ class Fornecedor extends BaseModel {
     public function listar() {
         return ($fornecedores = $this->read("*")) ? $fornecedores : FALSE;
     }
+
+    public function getFornecedorById($id){
+        $where = " e INNER JOIN fornecedor f ON f.fkEndereco = e.idEndereco WHERE f.idFornecedor = $id";
+        return ($produto = $this->readKey("*", $where)) ? $produto : FALSE;
+    }
     
     public function atualizar($dados){
         $array = array(
-                "nome_produto" => $dados->nome, "fabricante" => $dados->fabricante, "peso" => $dados->peso,
-                "descricao" => $dados->descricao, "valorVenda" => $dados->valorVenda, "valorComprado" => $dados->valorComprado,
-                "dataValidade" => $dados->dataValidade, "fkFornecedor" => $dados->fornecedor
+                "nome" => $dados->nome, "telefone" => $dados->telefone, "email" => $dados->email,
+                "inscricaoEstadual" => $dados->inscricaoEstadual, "numero" => $dados->numero, "cep" => $dados->cep,
+                "endereco" => $dados->endereco, "complemento" => $dados->complemento, "bairro" => $dados->bairro,
+                "uf" => $dados->uf, "cidade" => $dados->cidade, "logradouro" => $dados->logradouro
         );
-        $where = "	idFornecedor = $dados->idProduto";
-        return ($produtos = $this->update($array, $where)) ? $produtos : FALSE;
-        
+        $where = "	idFornecedor = $dados->idFornecedor";
+        return $this->update($array, $where) ? TRUE : FALSE;    
     }
     
     public function excluir($id){

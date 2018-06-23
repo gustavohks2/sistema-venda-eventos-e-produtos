@@ -14,7 +14,7 @@ class Produto extends BaseModel {
         $array = array(
             "0" =>
             array(
-                "nome_produto" => $dados->nome, "fabricante" => $dados->fabricante, "peso" => $dados->peso,
+                "nome" => $dados->nome, "fabricante" => $dados->fabricante, "peso" => $dados->peso,
                 "descricao" => $dados->descricao, "valorVenda" => $dados->valorVenda, "valorComprado" => $dados->valorComprado,
                 "dataValidade" => $dados->dataValidade, "fkFornecedor" => $dados->fornecedor
             )
@@ -28,18 +28,19 @@ class Produto extends BaseModel {
         return ($produtos = $this->read("*")) ? $produtos : FALSE;
     }
     
-    public function listOneKey($where){
+    public function getProdutoById($id){
+        $where = "p JOIN fornecedor f ON p.fkFornecedor = f.idFornecedor  where p.idProduto = $id";
         return ($produto = $this->readKey("*", $where)) ? $produto : FALSE;
     }
     
     public function atualizar($dados){
         $array = array(
-                "nome_produto" => $dados->nome, "fabricante" => $dados->fabricante, "peso" => $dados->peso,
+                "nome" => $dados->nome, "fabricante" => $dados->fabricante, "peso" => $dados->peso,
                 "descricao" => $dados->descricao, "valorVenda" => $dados->valorVenda, "valorComprado" => $dados->valorComprado,
                 "dataValidade" => $dados->dataValidade, "fkFornecedor" => $dados->fornecedor
         );
         $where = "idProduto = $dados->idProduto";
-        return ($produtos = $this->update($array, $where)) ? $produtos : FALSE;
+        return $this->update($array, $where) ? TRUE : FALSE;
         
     }
     

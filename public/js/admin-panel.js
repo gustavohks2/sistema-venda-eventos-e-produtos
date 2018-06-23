@@ -9,6 +9,7 @@ $(document).ready(function() {
          inputs: {
             CEP: $("[data-input='CEP']"),
             CPF: $("[data-input='CPF']"),
+            date: $("[data-input='date']"),
             preco: $("[data-input='preco']"),
             telefone: $("[data-input='telefone']")
          }
@@ -25,6 +26,7 @@ $(document).ready(function() {
       const bindMasks = function() {
          DOM.inputs.CEP.mask("00000-000");
          DOM.inputs.CPF.mask("000.000.000-00");
+         DOM.inputs.date.mask("00/00/0000");
          DOM.inputs.telefone.mask("(00) 0000-0000");
          DOM.inputs.preco.mask("0##.00");
       }
