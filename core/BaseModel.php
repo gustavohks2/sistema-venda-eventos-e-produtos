@@ -62,14 +62,14 @@ abstract class BaseModel {
         }
     }
     
-    public function readChave($campos = "*",$campos_values, $where = null) {
+    public function readKey($campos = "*",$campos_values, $where = null) {
         try {
             $where_sql = empty($where) ? "" : "WHERE " . $where;
             $r = $this->con->conecta()->prepare("SELECT {$campos} FROM $this->tabela  {$campos_values} {$where_sql};");
 //            print_r($r); die();
             if ($r->execute()) {
 //                print_r($r->fetchAll()); die();
-                return $r->fetchAll();
+                return $r->fetch();
             } else {
                 print_r($r->errorInfo());
             }

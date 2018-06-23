@@ -28,8 +28,8 @@ class Produto extends BaseModel {
         return ($produtos = $this->read("*")) ? $produtos : FALSE;
     }
     
-    public function listraOneChave($where){
-        return ($produtos = $this->readChave("*", $where)) ? $produtos : FALSE;
+    public function listOneKey($where){
+        return ($produto = $this->readKey("*", $where)) ? $produto : FALSE;
     }
     
     public function atualizar($dados){

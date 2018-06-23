@@ -625,21 +625,27 @@ a:link, .header__box-text a:active {
     position: relative; }
   .table__options-group {
     top: 100%;
-    right: -.1rem;
     opacity: 0;
-    z-index: 2222;
+    z-index: 7777;
+    right: -.1rem;
     position: absolute;
     visibility: hidden; }
   .table__option {
     width: 10rem;
     height: 4rem;
+    z-index: 9999;
     line-height: 4rem;
     background-color: #ffffff;
-    border-top: 1px solid #dedede;
-    border-left: 1px solid #dedede;
-    border-right: 1px solid #dedede; }
-  .table__option:not(:first-child) {
-    border-bottom: 1px solid #dedede; }
+    border: 1px solid #dedede; }
+  .table__option a,
+  .table__option a:link,
+  .table__option a:active,
+  .table__option a:visited {
+    display: block;
+    text-decoration: none;
+    color: #3E3E3E; }
+  .table__option:first-child {
+    border-bottom: none; }
   .table__option:hover {
     background-color: whitesmoke; }
   .table__toggler:hover .table__options-group {

@@ -36,9 +36,7 @@ class ProdutoController extends BaseController {
         $produto = new Produto();
         //essa só foi uma forma para demonstra como trazer dados de outra tabela pela chave estrangeira
         //aqui poderia so te usado o o metodo listar
-        $this->view->ListarProduto = $produto->listraOneChave(
-            "p JOIN fornecedor f ON p.fkFornecedor = f.idFornecedor  where p.idProduto = $id"
-        );
+        $this->view->produto = $produto->listOneKey( "p JOIN fornecedor f ON p.fkFornecedor = f.idFornecedor  where p.idProduto = $id" );
         $fornecedor = new Fornecedor;
 
         $this->view->fornecedores = $fornecedor->listar();

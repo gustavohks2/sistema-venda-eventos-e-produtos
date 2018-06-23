@@ -29,9 +29,9 @@
 
    &__options-group {
       top: 100%;
-      right: -.1rem;
       opacity: 0;
-      z-index: 2222;
+      z-index: 7777;
+      right: -.1rem;
       position: absolute;
       visibility: hidden;
    }
@@ -39,16 +39,22 @@
    &__option {
       width: 10rem;
       height: 4rem;
+      z-index: 9999;
       line-height: 4rem;
       background-color: $color-white;
-      border-top: 1px solid lighten($color-gray-light, 5%);
-      border-left: 1px solid lighten($color-gray-light, 5%); 
-      border-right: 1px solid lighten($color-gray-light, 5%); 
+      border: 1px solid lighten($color-gray-light, 5%);
+   }
+
+   &__option a,
+   &__option a:link,
+   &__option a:active,
+   &__option a:visited {
+      display: block;
+      text-decoration: none;
+      color: $color-gray-dark;
    }
    
-   &__option:not(:first-child) {
-      border-bottom: 1px solid lighten($color-gray-light, 5%);
-   }
+   &__option:first-child { border-bottom: none; }
 
    &__option:hover {
       background-color: lighten($color-gray-light, 14%);

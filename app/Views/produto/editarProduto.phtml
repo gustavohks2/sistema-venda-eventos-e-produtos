@@ -1,42 +1,39 @@
+<?php $produto = $this->view->produto ?>
 <section class="admin-content">
-    <?php if($this->view->ListarProduto):
-     foreach ($this->view->ListarProduto as $ListarProduto):
-        ?>
-    <form class="form" method="POST" action="<?= base_url('')?>/produto/editar/salvar">
-
+    <form class="form" method="POST" action="admin/produto/editar/salvar">
       <div class="row">
          <div class="col-1-of-2">
             <div class="form__group">
                <label class="form__label" for="nome">Nome</label>
-               <input id="nome" class="form__control" type="text" name="nome" value="<?=$ListarProduto->nome_produto?>">
-               <input type="hidden" name="idProduto" value="<?=$ListarProduto->idProduto?>">
+               <input id="nome" class="form__control" type="text" name="nome" value="<?=$produto->nome?>">
+               <input type="hidden" name="idProduto" value="<?=$produto->idProduto?>">
             </div>
 
             <div class="form__group">
                <label class="form__label" for="fabricante">Fabricante</label>
-               <input id="fabricante" class="form__control" type="text" name="fabricante" value="<?=$ListarProduto->fabricante?>">
+               <input id="fabricante" class="form__control" type="text" name="fabricante" value="<?=$produto->fabricante?>">
             </div>
             
             <div class="form__group">
                <label class="form__label" for="descricao">Descrição</label>
-               <textarea id="descricao" class="form__control form__control--textarea" name="descricao"><?=$ListarProduto->descricao?></textarea>
+               <textarea id="descricao" class="form__control form__control--textarea" name="descricao"><?=$produto->descricao?></textarea>
             </div>
 
             <div class="form__group">
                <label class="form__label" for="peso">Peso</label>
-               <input id="peso" class="form__control" type="text" name="peso" value="<?=$ListarProduto->peso?>">
+               <input id="peso" class="form__control" type="text" name="peso" value="<?=$produto->peso?>">
             </div>
          </div>
 
          <div class="col-1-of-2">
             <div class="form__group">
                <label class="form__label" for="valor-venda">Valor de venda</label>
-               <input id="valor-venda" class="form__control" type="text" name="valorVenda" value="<?=$ListarProduto->valorVenda?>">
+               <input id="valor-venda" class="form__control" type="text" name="valorVenda" value="<?=$produto->valorVenda?>">
             </div>
 
             <div class="form__group">
                <label class="form__label" for="valor-comprado">Valor comprado</label>
-               <input id="valor-comprado" class="form__control" type="text" name="valorComprado" value="<?=$ListarProduto->valorComprado?>">
+               <input id="valor-comprado" class="form__control" type="text" name="valorComprado" value="<?=$produto->valorComprado?>">
             </div>
             
 
@@ -44,16 +41,12 @@
                <label class="form__label" for="valor-venda">Data de Validade</label>
                <input id="data-validade" class="form__control" type="date" name="dataValidade" value="<?=$ListarProduto->dataValidade?>">
             </div>
-             <?php 
-                endforeach;
-                endif;
-               ?>
             <div class="form__group">
                <label class="form__label" for="fornecedor">Fornecedor</label>
                <select id="fornecedor" class="form__control form__control--select" name="fornecedor">
                   <?php foreach($this->view->fornecedores as $fornecedor) : ?>
                      <option value="<?= $fornecedor->idFornecedor ?>">
-                        <?= $fornecedor->nome_fonecedor?>
+                        <?= $fornecedor->nome?>
                      </option>
                   <?php endforeach; ?>
                </select>

@@ -13,8 +13,8 @@ $routes[] = ['/admin/fornecedores', 'AdminController@manterFornecedores'];
 
 $routes[] = ['/admin/cadastro/produto', 'AdminController@cadastroProduto'];
 $routes[] = ['/produto/cadastrar', 'ProdutoController@cadastrar'];
-$routes[] = ['/produto/editar', 'ProdutoController@cadastrarEditar'];
-$routes[] = ['/produto/excluir', 'ProdutoController@produtoExcluir'];
+$routes[] = ['/admin/produto/editar', 'ProdutoController@cadastrarEditar'];
+$routes[] = ['/admin/produto/excluir', 'ProdutoController@produtoExcluir'];
 $routes[] = ['/produto/editar/salvar', 'ProdutoController@cadastrarEditarSalvar'];
 
 $routes[] = ['/admin/cadastro/fornecedor', 'AdminController@cadastroFornecedor'];
