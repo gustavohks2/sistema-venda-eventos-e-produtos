@@ -33,6 +33,8 @@ class CertificadoController extends BaseController {
    public function cadastrar($request) {
       $dados = $request->post;
       $certificado = new Certificado;
-      $certificado->cadastrar($dados);
+
+      if ($certificado->cadastrar($dados)) $this->redirect("admin/certificados", self::SUCCESS, "Certificado registrado com sucesso!");
+      else $this->redirect("admin/certificados", self::DANGER, "Erro ao registrar dados do certificado!");
    }
 }
