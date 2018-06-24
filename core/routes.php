@@ -24,5 +24,9 @@ $routes[] = ['/admin/fornecedor/editar', 'FornecedorController@Editar'];
 $routes[] = ['/admin/fornecedor/excluir', 'FornecedorController@Excluir'];
 $routes[] = ['/fornecedor/editar/salvar', 'FornecedorController@EditarSalvar'];
 
+$routes[] = ['/admin/certificados', 'CertificadoController@index'];
+$routes[] = ['/admin/certificado/cadastro', 'CertificadoController@cadastro'];
+$routes[] = ['/certificado/cadastrar', 'CertificadoController@cadastrar'];
+
 return $routes;
 
