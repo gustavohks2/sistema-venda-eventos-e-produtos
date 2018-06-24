@@ -26,7 +26,8 @@
       <?php $this->displayMessage(true) ?>
       <div class="sidebar-menu">
          <div class="sidebar-menu__logo"></div>
-         <a href="/admin/produtos" class="sidebar-menu__item"><i class="sidebar-menu__icon icon-ecommerce-bag"></i></a>
+         <a class="sidebar-menu__item" href="/admin"><i class="sidebar-menu__icon fa fa-th-large"></i></a>
+         <a class="sidebar-menu__item" href="/admin/produtos"><i class="sidebar-menu__icon icon-ecommerce-bag"></i></a>
          <a class="sidebar-menu__item"><i class="sidebar-menu__icon icon-ecommerce-sales"></i></a>
          <a class="sidebar-menu__item"><i class="sidebar-menu__icon icon-ecommerce-wallet"></i></a>
          <a class="sidebar-menu__item"><i class="sidebar-menu__icon icon-ecommerce-creditcard"></i></a>
@@ -41,6 +42,8 @@
             <div class="topbar__profile-pic">
                <img class="topbar__img" src="/img/cake.svg" alt=""><i class="fa fa-caret-down topbar__arrow-down js-arrow-down-button"></i>
                <ul class="topbar__nav-menu js-nav-menu">
+                  <li><a href="/admin">Dashboard</a></li>
+                  <span class="u-divisor"></span>
                   <li><a href="/admin/produtos">Produtos</a></li>
                   <li><a href="/admin/fornecedores">Fornecedores</a></li>
                   <li><a href="/admin/certificados">Certificados</a></li>

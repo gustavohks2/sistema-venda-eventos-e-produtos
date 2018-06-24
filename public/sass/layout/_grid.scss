@@ -25,13 +25,3 @@
 }
 
 .full-container .row { max-width: 100%; }
-
-.placeholder { 
-   width: 100%;
-   padding: none;
-}
-
-.placeholder .row [class^="col-"] {
-   height: 20rem;
-   background-color: lighten($color-gray-dark, 65%);
-}

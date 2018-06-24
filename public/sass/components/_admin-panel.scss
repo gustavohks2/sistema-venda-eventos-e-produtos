@@ -1,0 +1,68 @@
+.admin-panel {
+   &__breadcrumb {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: lighten($color-gray-dark-2, 15%);
+   }
+
+   &__info-card {
+      height: 13rem;
+      cursor: pointer;
+      box-shadow: 0 0 2rem rgba($color-black, .2);
+
+      &--1 { background-image: linear-gradient(to bottom right, #ff9966, #ff5e62); }
+      &--2 { background-image: linear-gradient(to bottom right, #7F00FF, #E100FF); }
+      &--3 { background-image: linear-gradient(to bottom right, #24ddac, #0cebeb); }
+      &--4 { background-image: linear-gradient(to bottom right, #5B86E5, #36D1DC); }
+   }
+
+   &__info {
+      &--main {
+         height: 50%;
+         padding: 1.5rem 2rem 0 4rem;
+      }
+
+      &--sub {
+         padding: 0 2rem;
+         height: 50%;
+      }
+
+      &--inner {
+         float: left;
+         margin-right: 1rem;
+         width: calc(50% - 1rem);
+      }
+   }
+
+   &__title {
+      display: block;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      color: $color-white;
+      margin-bottom: .2rem;
+      text-transform: uppercase;
+   }
+
+   &__content {
+      font-weight: 400;
+      color: $color-white;
+      font-size: 1.8rem;
+   }
+
+   &__icon {
+      float: left;
+      font-size: 3rem;
+      line-height: 4rem;
+      color: $color-white;
+   }
+
+   &__caption {
+      font-size: 1.2em;
+      text-align: center;
+      line-height: 4rem;
+      color: $color-white;
+      text-transform: uppercase;
+      width: calc(100% - 3rem);
+   }
+}
