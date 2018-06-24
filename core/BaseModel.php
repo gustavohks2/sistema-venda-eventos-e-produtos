@@ -67,7 +67,7 @@ abstract class BaseModel {
             $where_sql = empty($where) ? "" : "WHERE " . $where;
             $r = $this->con->conecta()->prepare("SELECT {$campos} FROM $this->tabela  {$campos_values} {$where_sql};");
 
-            if ($r->execute()) return $r->fetch();
+            if ($r->execute()) return $r->fetchAll();
             else print_r($r->errorInfo());
             
         } catch (PDOException $ex) {

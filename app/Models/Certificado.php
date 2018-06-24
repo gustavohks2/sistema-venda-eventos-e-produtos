@@ -2,6 +2,7 @@
 namespace App\Models;
 
 use Core\BaseModel;
+use Mpdf\Mpdf;
 
 class Certificado extends BaseModel {
    
@@ -36,5 +37,48 @@ class Certificado extends BaseModel {
         );
 
         return $this->insert($array) ? TRUE : FALSE;
+    }
+
+    public function listar() {
+        $where = "e JOIN pessoa p ON p.fkEndereco = e.idEndereco JOIN certificadosemitidos c ON c.fkPessoa_aluno = p.idPessoa where c.idCertificado";
+        return ($certificados = $this->readKey("*", $where)) ? $certificados : FALSE;
+    }
+
+    public function getCertificadoById($id) {
+        $where = "e JOIN pessoa p ON p.fkEndereco = e.idEndereco JOIN certificadosemitidos c ON c.fkPessoa_aluno = p.idPessoa where c.idCertificado = $id";
+        return ($certificado = $this->readKey("*", $where)) ? $certificado : FALSE;
+    }
+
+    public function gerarCertificado($idCertificado) {
+        try {
+            if ($certificado = $this->getCertificadoById($idCertificado)[0]) {
+                $file = file_get_contents(__DIR__ . '/../Views/template/template-certificado.html', FILE_USE_INCLUDE_PATH);
+
+                $firstName = trim(explode(" ", $certificado->nome)[0]);
+                $certificado->dataInicio = date("d/m/Y", strtotime($certificado->dataInicio));
+                $certificado->dataFim = date("d/m/Y", strtotime($certificado->dataFim));
+
+                $search = ["{{nome}}", "{{cargaHoraria}}", "{{dataInicio}}", "{{dataFim}}"];
+                $replace = [$certificado->nome, $certificado->cargaHoraria, $certificado->dataInicio, $certificado->dataFim];
+                $file = str_replace($search, $replace, $file);
+                
+                $mpdf = new Mpdf([
+                    "orientation" => "L",
+                    "margin_left" => 0,
+                    "margin_right" => 0,
+                    "margin_top" => 0,
+                    "margin_bottom" => 0
+                ]);
+        
+                $mpdf->WriteHTML($file);
+                $mpdf->Output();
+                return TRUE;
+            }
+            
+            return FALSE;
+        } catch(Exception $e) {
+            echo "Não foi possível gerar o arquivo PDF, por favor, contate o Administrador<br>";
+            echo "Mensagem de Erro: " . $e->getMessage();
+        }
     }
 }

@@ -10,8 +10,19 @@ class CertificadoController extends BaseController {
    protected $tabela = "certificadosEmitidos";
 
    public function index() {
+      $certificado = new Certificado;
+
+      $this->view->certificados = $certificado->listar();
+
       $this->setPageTitle("Admin - Certificados");
       $this->Render("certificado/index", "layoutAdmin");
+   }
+
+   public function gerarPDF($id) {
+      $certificado = new Certificado;
+      
+      if (!$certificado->gerarCertificado($id)) 
+         $this->redirect("admin/certificados", self::DANGER, "Erro ao gerar PDF!");
    }
 
    public function cadastro() {

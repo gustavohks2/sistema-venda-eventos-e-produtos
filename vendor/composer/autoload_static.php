@@ -6,7 +6,24 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitb010f24c6a7d8586e7dea7592837ad0b
 {
+    public static $files = array (
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'Psr\\Log\\' => 8,
+        ),
+        'M' => 
+        array (
+            'Mpdf\\' => 5,
+        ),
+        'D' => 
+        array (
+            'DeepCopy\\' => 9,
+        ),
         'C' => 
         array (
             'Core\\' => 5,
@@ -18,6 +35,18 @@ class ComposerStaticInitb010f24c6a7d8586e7dea7592837ad0b
     );
 
     public static $prefixDirsPsr4 = array (
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Mpdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mpdf/mpdf/src',
+        ),
+        'DeepCopy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
         'Core\\' => 
         array (
             0 => __DIR__ . '/../..' . '/core',
@@ -29,13 +58,13 @@ class ComposerStaticInitb010f24c6a7d8586e7dea7592837ad0b
     );
 
     public static $classMap = array (
-        'App\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Controllers/HomeController.php',
-        'App\\Models\\Login' => __DIR__ . '/../..' . '/app/Models/Login.php',
-        'Core\\BaseController' => __DIR__ . '/../..' . '/core/BaseController.php',
-        'Core\\BaseModel' => __DIR__ . '/../..' . '/core/BaseModel.php',
-        'Core\\Container' => __DIR__ . '/../..' . '/core/Container.php',
-        'Core\\DataBase' => __DIR__ . '/../..' . '/core/DataBase.php',
-        'Core\\Route' => __DIR__ . '/../..' . '/core/Route.php',
+        'FPDF_TPL' => __DIR__ . '/..' . '/setasign/fpdi/fpdf_tpl.php',
+        'FPDI' => __DIR__ . '/..' . '/setasign/fpdi/fpdi.php',
+        'FilterASCII85' => __DIR__ . '/..' . '/setasign/fpdi/filters/FilterASCII85.php',
+        'FilterASCIIHexDecode' => __DIR__ . '/..' . '/setasign/fpdi/filters/FilterASCIIHexDecode.php',
+        'FilterLZW' => __DIR__ . '/..' . '/setasign/fpdi/filters/FilterLZW.php',
+        'fpdi_pdf_parser' => __DIR__ . '/..' . '/setasign/fpdi/fpdi_pdf_parser.php',
+        'pdf_context' => __DIR__ . '/..' . '/setasign/fpdi/pdf_context.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Certificado</title>
+
+      <style>
+         .main-container {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #e4e4e4;
+         }
+
+         .header {
+            width: 100%;
+            height: 40%;
+            background-color: #555;
+         }
+
+         .fore-sub-title, 
+         .main-title,
+         .sub-title {
+            color: #fff; 
+            font-family: "Arial";
+            text-transform: uppercase;
+            text-align: center;
+         }
+
+         .fore-sub-title { 
+            letter-spacing: 1px;
+            padding-top: 60px;
+            font-size: 20px;
+         }
+
+         .main-title {
+            letter-spacing: 5px;
+            font-size: 50px;
+            font-weight: 200;
+         }
+
+         .sub-title {
+            padding-top: -25px;
+         }
+
+         .body {
+            width: 100%;
+            height: 60%;
+         }
+
+         .border {
+            border: 6px solid white;
+            position: absolute;
+            top: 2%;
+            left: 2%;
+            width: 95%;
+            height: 94%;
+         }
+
+         .texto {
+            color: #78797c;
+            text-align: center;
+            font-size: 28px;
+            padding: 35px 200px 0 200px;
+         }
+
+         .bold {
+            text-transform: uppercase;
+            color: #48494b;
+         }
+
+         .linha-assinatura-esquerda {
+            width: 250px;
+            left: 100px;
+            bottom: 110px;
+            position: absolute;
+            letter-spacing: 1px;
+            text-align: center;
+            font-size: 17px;
+            padding-top: 10px;
+            border-top: 1px solid #484848;
+         }
+
+         .linha-assinatura-direita {
+            width: 250px;
+            right: 100px;
+            bottom: 110px;
+            font-size: 17px;
+            padding-top: 10px;
+            position: absolute;
+            letter-spacing: 1px;
+            text-align: center;
+            border-top: 1px solid #484848;
+         }
+
+         .dados-curso {
+            position: absolute;
+            bottom: 100px;
+            text-align: center;
+            left: 40%;
+            transform: translateX(-50%);
+         }
+
+         .button {
+            position: absolute;
+            top: 280px;
+            left: 48%;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to bottom right,  #2cebab, #07d7df);
+         }
+
+         .line-separator {
+            position: absolute;
+            top: 100px;
+            left: 45.5%;
+            width: 100px;
+            height: 4px;
+            transform: translateX(-50%);
+            background: linear-gradient(to bottom right,  #2cebab, #07d7df);
+         }
+      </style>
+   </head>
+   <body>
+      <div class="line-separator"></div>
+      <div class="border"></div>
+      <div class="linha-assinatura-esquerda">Aluno(a)</div>
+      <div class="linha-assinatura-direita">Professor(a)</div>
+
+      <div class="button"></div>
+
+      <div class="dados-curso">
+         <span class="bold">Carga Horária:</span> {{cargaHoraria}} hora(s)<br/><br/>
+         <span class="bold">Data de Início:</span> {{dataInicio}}<br/>
+         <span class="bold">Data de Conclusão:</span> {{dataFim}}<br/>
+      </div>
+
+      <!-- <span class="linha-assinatura"></span> -->
+      <div class="main-container">
+         <span class="border"></span>
+         <div class="header">
+            <h3 class="fore-sub-title">MariaTH Doces</h3>
+            <h1 class="main-title">Certificado</h1>
+            <h2 class="sub-title">de conclusão de curso</h2>
+         </div>
+         <div class="body">
+            <p class="texto">Certificamos que o(a) aluno(a) <span class="bold">{{nome}}</span> concluiu o curso de Confeitaria e Montagem de Festas pela instituição MariaTH Doces.</p>
+         </div>
+      </div>
+   </body>
+</html>

@@ -3,9 +3,7 @@
 namespace Core;
 use PDO;
 use PDOException;
-/*
- * @author Wesllen
- */
+
 class DataBase {
     private $usuario;
     private $senha;
