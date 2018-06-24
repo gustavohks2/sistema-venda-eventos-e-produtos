@@ -5,7 +5,7 @@
          <div class="col-1-of-2">
             <div class="form__group">
                <label class="form__label" for="nome">Nome</label>
-               <input id="nome" class="form__control" type="text" name="nome" value="<?=$produto->nome?>">
+               <input id="nome" class="form__control" type="text" name="nome" value="<?=$produto->nomeProduto?>">
                <input type="hidden" name="idProduto" value="<?=$produto->idProduto?>">
             </div>
 
@@ -39,7 +39,7 @@
 
             <div class="form__group">
                <label class="form__label" for="valor-venda">Data de Validade</label>
-               <input id="data-validade" class="form__control" type="date" name="dataValidade" value="<?=$produto->dataValidade?>" data-input="date">
+               <input id="data-validade" class="form__control" type="date" name="dataValidade" value="<?=$produto->dataValidade?>">
             </div>
             <div class="form__group">
                <label class="form__label" for="fornecedor">Fornecedor</label>
@@ -53,6 +53,6 @@
             </div>
          </div>
       </div>
-      <button class="btn btn--blue u-push-right" type="submit">Editar &nbsp;<i class="fa fa-arrow-right"></i> </button>
+      <button class="btn btn--blue u-push-right" type="submit">Editar &nbsp;<i class="fa fa-arrow-right"></i></button>
    </form>   
 </section>

@@ -76,7 +76,7 @@ abstract class BaseModel {
     }
 
     public function insert(array $campos_values) {
-        //atribui a uma variavel a quantidade de tabelas a ser usadas
+        //atribui a uma variavel a quantidade de tabelas a serem usadas
         $total = $this->tabelaUse;
         switch ($total) {
             Case 1:

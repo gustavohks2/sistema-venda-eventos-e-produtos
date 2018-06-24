@@ -36,9 +36,10 @@ class ProdutoController extends BaseController {
         $produto = new Produto();
         //essa só foi uma forma para demonstra como trazer dados de outra tabela pela chave estrangeira
         //aqui poderia so te usado o o metodo listar
+        $this->setPageTitle("Admin - Editar Fornecedor");
         $this->view->produto = $produto->getProdutoById( $id );
-        $fornecedor = new Fornecedor;
 
+        $fornecedor = new Fornecedor;
         $this->view->fornecedores = $fornecedor->listar();
 
         $this->Render("produto/editarProduto", "layoutAdmin");

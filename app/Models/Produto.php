@@ -30,7 +30,7 @@ class Produto extends BaseModel {
     
     public function getProdutoById($id){
         $where = "p JOIN fornecedor f ON p.fkFornecedor = f.idFornecedor  where p.idProduto = $id";
-        return ($produto = $this->readKey("*", $where)) ? $produto : FALSE;
+        return ($produto = $this->readKey("*, p.nome AS nomeProduto", $where)) ? $produto : FALSE;
     }
     
     public function atualizar($dados){

@@ -28,6 +28,9 @@ class Route{
         foreach ($_POST as $key => $value){
             @$obj->post->$key = $value;
         }
+        foreach ($_FILES as $key => $value){
+            @$obj->files->$key = $value;
+        }
         return $obj;
     }
 
