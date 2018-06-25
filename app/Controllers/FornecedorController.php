@@ -26,7 +26,7 @@ class FornecedorController extends BaseController {
         $fornecedor = new Fornecedor();
 
         $this->setPageTitle("Admin - Editar Fornecedor");
-        $this->view->fornecedor = $fornecedor->getFornecedorById($id);
+        $this->view->fornecedor = $fornecedor->getFornecedorById($id)[0];
 
         $this->Render("fornecedor/editarFornecedor", "layoutAdmin");
     }
