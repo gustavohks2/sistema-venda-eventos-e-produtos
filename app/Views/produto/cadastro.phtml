@@ -1,6 +1,6 @@
 <span class="admin-panel__breadcrumb">Admin > Produto > Cadastro</span>
 <section class="admin-content">
-   <form class="form" method="POST" action="/produto/cadastrar">
+   <form class="form" method="POST" action="/produto/cadastrar" enctype="multipart/form-data">
 
       <div class="row">
          <div class="col-1-of-2">
@@ -62,6 +62,22 @@
                      </option>
                   <?php endforeach; ?>
                </select>
+            </div>
+
+             <div class="form__group">
+               <div class="row">
+                  <div class="col-1-of-2">
+                     <label class="form__label" for="fornecedor">Imagem</label>
+                     <input id="imagem" class="form__control" type="file" name="imagem">
+                  </div>
+                  <div class="col-1-of-2">
+                     <label class="form__label" for="tipo-visibilidade">Visível pro cliente?</label>
+                     <select id="tipo-visibilidade" class="form__control form__control--select" name="tipoVisibilidade">
+                        <option value="0">Sim</option>
+                        <option value="1">Não</option>
+                     </select>
+                  </div>
+               </div>
             </div>
          </div>
       </div>

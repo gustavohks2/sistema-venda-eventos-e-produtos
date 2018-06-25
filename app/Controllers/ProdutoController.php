@@ -22,10 +22,11 @@ class ProdutoController extends BaseController {
     
     public function cadastrar($request) {
         $dados = $request->post;
+        $files = $request->files;
 
         $produto = new Produto();
 
-        if ($produto->cadastrar($dados)) 
+        if ($produto->cadastrar($dados, $files)) 
             $this->redirect("admin/produtos", self::SUCCESS, "Cadastrado com sucesso!");
 
         $this->redirect("admin/produtos", self::DANGER, "OPS, algo deu errado!");

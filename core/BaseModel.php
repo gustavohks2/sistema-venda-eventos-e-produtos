@@ -292,8 +292,25 @@ abstract class BaseModel {
         } catch (\PDOException $ex) {
              echo $ex->getMessage();
         }
-        
-        
+    }
+
+    public function uploadImage($file) {
+        $allowed_extensions = ["png", "jpg", "jpeg"];
+        if ($file["error"] === 0) {
+            $ext = pathinfo($file["name"], PATHINFO_EXTENSION);
+            if (in_array($ext, $allowed_extensions)) {
+
+                $fileName = uniqid("", true) . "." . $ext;
+                $filePath = __DIR__ . DIRECTORY_SEPARATOR . "../core/imagens" . DIRECTORY_SEPARATOR . $fileName;
+
+                if (move_uploaded_file($file["tmp_name"], $filePath)) return $fileName;
+                else return FALSE;
+
+            } else { return FALSE; }
+
+            return TRUE;
+        }
+        return FALSE;
     }
 
 }

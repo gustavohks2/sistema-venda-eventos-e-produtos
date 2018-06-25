@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 24, 2018 at 08:54 PM
+-- Generation Time: Jun 24, 2018 at 10:03 PM
 -- Server version: 5.7.22-0ubuntu0.16.04.1
 -- PHP Version: 7.0.30-0ubuntu0.16.04.1
 
@@ -275,7 +275,7 @@ CREATE TABLE `produto` (
   `valorComprado` decimal(10,2) NOT NULL,
   `dataValidade` date NOT NULL,
   `tipoVisibilidade` int(11) NOT NULL,
-  `imagem` varchar(11) DEFAULT NULL,
+  `imagem` varchar(30) DEFAULT NULL,
   `fkFornecedor` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -284,7 +284,7 @@ CREATE TABLE `produto` (
 --
 
 INSERT INTO `produto` (`idProduto`, `nome`, `fabricante`, `peso`, `descricao`, `valorVenda`, `valorComprado`, `dataValidade`, `tipoVisibilidade`, `imagem`, `fkFornecedor`) VALUES
-(5, 'Gravit', 'teste', '9.33', 'teste', '10.00', '10.00', '2018-02-10', 0, '0', 1);
+(1, 'Bolo', '-', '1.00', 'Nenhum', '1.00', '1.00', '2019-07-25', 0, '5b303ee3d6ffd9.31671600.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -451,7 +451,7 @@ ALTER TABLE `pessoa`
 -- AUTO_INCREMENT for table `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `idProduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idProduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `usuario`
 --
