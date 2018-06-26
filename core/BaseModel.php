@@ -268,7 +268,7 @@ abstract class BaseModel {
 
             $r = $this->con->conecta()->prepare("UPDATE {$this->tabela} SET {$sql_text} {$where_sql}");
             $r->execute();
-            if ($r->rowCount()) {
+            if ($r->rowCount() >= 0) {
                 return TRUE;
             } else {
                 return FALSE;

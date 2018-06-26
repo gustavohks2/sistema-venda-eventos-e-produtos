@@ -49,11 +49,9 @@ class ProdutoController extends BaseController {
     public function cadastrarEditarSalvar($request) {        
         $dados = $request->post;
         $produto = new Produto();
-        if($produto->atualizar($dados)){
-        $this->redirect("admin/produtos", self::SUCCESS, "Editado com sucesso!");
-        }else{
-           $this->redirect("admin/produtos", self::DANGER, "OPS, algo deu errado!");
-        }
+        if ($produto->atualizar($dados)) $this->redirect("admin/produtos", self::SUCCESS, "Editado com sucesso!");
+        else $this->redirect("admin/produtos", self::DANGER, "OPS, algo deu errado!");
+        
     }
     
     public function produtoExcluir($request) {
