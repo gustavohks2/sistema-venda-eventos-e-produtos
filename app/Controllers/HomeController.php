@@ -5,10 +5,13 @@ use Core\Session;
 use Core\BaseController;
 use App\Models\Login;
 use App\Models\Usuario;
+use App\Models\Produto;
 
 class HomeController extends BaseController {
 
     public function index() {
+        $produto = new Produto();
+        $this->view->produtos = $produto->listar();
         // Seta o titulo da pagina
         $this->setPageTitle("Home");
         // Renderiza a pagina e o layout

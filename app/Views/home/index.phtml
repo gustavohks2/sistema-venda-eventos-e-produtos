@@ -8,7 +8,15 @@
    <div class="main" role="Main">
       
       <section class="section-produtos">
-         
+         <?php foreach($this->view->produtos as $produto) : ?>
+            <div class="produto">
+               <div class="produto__image" style="background-image: url('../core/imagens/<?=$produto->imagem?>')"></div>
+               <h3 class="produto__name"><?=$produto->nome?></h3>
+               <span class="produto__price">R$ <?=number_format($produto->valorVenda, 2, ".", ",")?></span>
+               <p class="produto__description"><?=$produto->descricao?></p>
+               <a href="/carrinho/adicionar/<?=$produto->idProduto?>">Adicionar ao Carrinho</a>
+            </div>
+         <?php endforeach ?>
       </section>
    </div>
 
