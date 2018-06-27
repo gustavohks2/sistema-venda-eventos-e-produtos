@@ -4,6 +4,7 @@
    <form class="form" method="POST" action="/fornecedor/editar/salvar">
       <div class="row">
          <div class="col-1-of-2">
+            <input type="hidden" name="idFornecedor" value="<?=$fornecedor->idFornecedor?>">
             <div class="form__group">
                <label class="form__label" for="nome">Nome</label>
                <input id="nome" class="form__control" type="text" name="nome" value="<?=$fornecedor->nome?>" required>
@@ -29,7 +30,11 @@
                <input id="inscricao-estadual" class="form__control" type="text" name="inscricaoEstadual" value="<?=$fornecedor->inscricaoEstadual?>" required>
             </div>
          </div>
+
+
          <div class="col-1-of-2">
+
+            <input type="hidden" name="idEndereco" value="<?=$fornecedor->idEndereco?>">
 
             <div class="row no-gap">
                <div class="col-1-of-2">

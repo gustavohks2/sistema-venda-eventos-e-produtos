@@ -17,20 +17,21 @@
                foreach ($this->view->fornecedores as $fornecedor): 
          ?>
          <tr>
-               <td><?=$fornecedor->nome?></td>
-               <td><?=$fornecedor->telefone?></td>
-               <td><?=$fornecedor->email?></td>
-               <td><?=$fornecedor->razaoSocial?></td>
-               <td><?=$fornecedor->status?></td>
-               <td><?=date("d/m/Y", strtotime($fornecedor->dataBloqueioFornecedor))?></td>
-               <td><?=$fornecedor->inscricaoEstadual?></td>
-               <td class="table__toggler">
-						<i class="fa fa-ellipsis-h"></i>
-						<ul class="table__options-group">
-								<li class="table__option"><a href="/admin/fornecedor/editar?id=<?=$fornecedor->idFornecedor?>"><i class="fa fa-pencil"></i> Editar</a></li>
-								<li class="table__option"><a href="/admin/fornecedor/excluir?id=<?=$fornecedor->idFornecedor?>"><i class="fa fa-close"></i> Excluir</a></li>
-						</ul>
-					</td>
+            <td><?=$fornecedor->nome?></td>
+            <td><?=$fornecedor->telefone?></td>
+            <td><?=$fornecedor->email?></td>
+            <td><?=$fornecedor->razaoSocial?></td>
+            <td style="text-transform: capitalize;"><?=$this->view->fornecedor::$tiposStatus[$fornecedor->status];?></td>
+            <td><?=date("d/m/Y", strtotime($fornecedor->dataBloqueioFornecedor))?></td>
+            <td><?=$fornecedor->inscricaoEstadual?></td>
+            <td class="table__toggler">
+               <i class="fa fa-ellipsis-h"></i>
+               <ul class="table__options-group">
+                  <li class="table__option"><a href="/admin/fornecedor/editar?id=<?=$fornecedor->idFornecedor?>"><i class="fa fa-pencil"></i> Editar</a></li>
+                  <li class="table__option"><a href="/fornecedor/bloquear/<?=$fornecedor->idFornecedor?>"><i class="fa fa-lock"></i> Bloquear</a></li>
+                  <li class="table__option"><a href="/fornecedor/desbloquear/<?=$fornecedor->idFornecedor?>"><i class="fa fa-unlock"></i> Desbloquear</a></li>
+               </ul>
+            </td>
          </tr>
          <?php    endforeach;
                endif;

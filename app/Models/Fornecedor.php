@@ -7,6 +7,7 @@ class Fornecedor extends BaseModel {
    
     protected $tabela = "endereco";
     protected $tabela2 = "fornecedor";
+    public static $tiposStatus = ["ativo", "bloqueado"];
 
     protected $tabelaUse = 2;
 
@@ -41,13 +42,33 @@ class Fornecedor extends BaseModel {
     
     public function atualizar($dados){
         $array = array(
+            array(
+                "numero" => $dados->numero, "cep" => $dados->cep, "endereco" => $dados->endereco, 
+                "complemento" => $dados->complemento, "bairro" => $dados->bairro, "uf" => $dados->uf, 
+                "cidade" => $dados->cidade, "logradouro" => $dados->logradouro
+            ),
+            array(
                 "nome" => $dados->nome, "telefone" => $dados->telefone, "email" => $dados->email,
-                "inscricaoEstadual" => $dados->inscricaoEstadual, "numero" => $dados->numero, "cep" => $dados->cep,
-                "endereco" => $dados->endereco, "complemento" => $dados->complemento, "bairro" => $dados->bairro,
-                "uf" => $dados->uf, "cidade" => $dados->cidade, "logradouro" => $dados->logradouro
+                "inscricaoEstadual" => $dados->inscricaoEstadual
+            )
         );
-        $where = "	idFornecedor = $dados->idFornecedor";
-        return $this->update($array, $where) ? TRUE : FALSE;    
+
+        return $this->updateWithChildRows($array, [
+                    "idEndereco" => $dados->idEndereco,
+                    "idFornecedor" => $dados->idFornecedor
+               ]) ? TRUE : FALSE;    
+    }
+
+    public function bloquear($id){
+        $array = [ "status" => 1, "dataBloqueioFornecedor" => date("Y-m-d") ];
+        
+        return $this->update($array, " idFornecedor = $id", "fornecedor");
+    }
+
+    public function desbloquear($id){
+        $array = [ "status" => 0, "dataBloqueioFornecedor" => date("Y-m-d", strtotime("11-11-1111")) ];
+        
+        return $this->update($array, " idFornecedor = $id", "fornecedor");
     }
     
     public function excluir($id){

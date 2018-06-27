@@ -30,6 +30,7 @@ class AdminController extends BaseController{
             $this->redirect("", self::WARNING, "Você não tem permissão para acessar a página!");
 
         $fornecedor = new Fornecedor;
+        $this->view->fornecedor = $fornecedor;
         $this->view->fornecedores = $fornecedor->listar();
 
         $this->setPageTitle("Admin - Fornecedores");

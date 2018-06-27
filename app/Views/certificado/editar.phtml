@@ -1,43 +1,46 @@
-<span class="admin-panel__breadcrumb">Admin > Certificado > Cadastro</span>
+<?php $certificado = $this->view->certificado ?>
+<span class="admin-panel__breadcrumb">Admin > Certificado > Editar</span>
 <section class="admin-content">
    <form class="form" method="POST" action="/certificado/atualizar">
       <div class="row">
          <div class="col-1-of-2">
+            <input type="hidden" name="idPessoa" value="<?=$certificado->idPessoa?>">
+
             <div class="form__group">
                <label class="form__label">Nome:</label>
-               <input class="form__control" type="text" name="nome">
+               <input class="form__control" type="text" name="nome" value="<?=$certificado->nome?>">
             </div>    
             <div class="form__group">
                <label class="form__label">CPF:</label>
-               <input class="form__control" type="text" name="cpf" data-input="CPF">
+               <input class="form__control" type="text" name="cpf" data-input="CPF" value="<?=$certificado->cpf?>">
             </div>    
             <div class="form__group">
                <label class="form__label">RG:</label>
-               <input class="form__control" type="text" name="rg">
+               <input class="form__control" type="text" name="rg" value="<?=$certificado->rg?>">
             </div>    
             <div class="form__group">
                <label class="form__label">Telefone:</label>
-               <input class="form__control" type="text" name="telefone" data-input="telefone">
+               <input class="form__control" type="text" name="telefone" data-input="telefone" value="<?=$certificado->telefoneContato?>">
             </div>    
             <div class="form__group">
                <label class="form__label">Email:</label>
-               <input class="form__control" type="email" name="email">
+               <input class="form__control" type="email" name="email" value="<?=$certificado->email?>">
             </div>
          </div>
 
          <div class="col-1-of-2">
-
+            <input type="hidden" name="idCertificado" value="<?=$certificado->idCertificado?>">
             <div class="row no-gap">
                <div class="col-1-of-2">
                   <div class="form__group">
                      <label class="form__label" for="data-inicio">Data Início Curso</label>
-                     <input id="data-inicio" class="form__control" type="date" name="dataInicio">
+                     <input id="data-inicio" class="form__control" type="date" name="dataInicio" value="<?=$certificado->dataInicio?>">
                   </div>
                </div>
                <div class="col-1-of-2">
                   <div class="form__group">
                      <label class="form__label" for="data-fim">Data Fim Curso</label>
-                     <input id="data-fim" class="form__control" type="date" name="dataFim">
+                     <input id="data-fim" class="form__control" type="date" name="dataFim" value="<?=$certificado->dataFim?>">
                   </div>
                </div>
             </div>
@@ -46,13 +49,13 @@
                <div class="col-2-of-3">
                   <div class="form__group">
                      <label class="form__label" for="responsavel">Professor(a)</label>
-                     <input id="responsavel" class="form__control" type="text" name="responsavel">
+                     <input id="responsavel" class="form__control" type="text" name="responsavel" value="<?=$certificado->responsavel?>">
                   </div>
                </div>
                <div class="col-1-of-3">
                   <div class="form__group">
                      <label class="form__label" for="carga-horaria">Carga (H)</label>
-                     <input id="carga-horaria" class="form__control" type="text" name="cargaHoraria">
+                     <input id="carga-horaria" class="form__control" type="text" name="cargaHoraria" value="<?=$certificado->cargaHoraria?>">
                   </div>
                </div>
             </div>
@@ -60,42 +63,44 @@
       </div>
       <div class="row">
          <div class="col-1-of-2">
+            <input type="hidden" name="idEndereco" value="<?=$certificado->idEndereco?>">
+
             <div class="form__group">
                <label class="form__label">CEP:</label>
-               <input class="form__control" type="text" name="cep" data-input="CEP">
+               <input class="form__control" type="text" name="cep" data-input="CEP" value="<?=$certificado->cep?>">
             </div>    
             <div class="form__group">
                <label class="form__label">Endereço:</label>
-               <input class="form__control" type="text" name="endereco">
+               <input class="form__control" type="text" name="endereco" value="<?=$certificado->endereco?>">
             </div>    
             <div class="form__group">
                <label class="form__label">Complemento:</label>
-               <input class="form__control" type="text" name="complemento">
+               <input class="form__control" type="text" name="complemento" value="<?=$certificado->complemento?>">
             </div>    
             <div class="form__group">
                <label class="form__label">Numero:</label>
-               <input class="form__control" type="number" name="numero">
+               <input class="form__control" type="number" name="numero" value="<?=$certificado->numero?>">
             </div>
          </div>
          <div class="col-1-of-2">
             <div class="form__group">
                <label class="form__label">Bairro:</label>
-               <input class="form__control" type="text" name="bairro">
+               <input class="form__control" type="text" name="bairro" value="<?=$certificado->bairro?>">
             </div>    
             <div class="form__group">
                <label class="form__label">Cidade:</label>
-               <input class="form__control" type="text" name="cidade">
+               <input class="form__control" type="text" name="cidade" value="<?=$certificado->cidade?>">
             </div>    
             <div class="form__group">
                <label class="form__label">UF:</label>
-               <input class="form__control" type="text" name="uf">
+               <input class="form__control" type="text" name="uf" value="<?=$certificado->uf?>">
             </div>    
             <div class="form__group">
                <label class="form__label">Logradouro</label>
-               <input class="form__control" type="text" name="logradouro">
+               <input class="form__control" type="text" name="logradouro" value="<?=$certificado->logradouro?>">
             </div>    
          </div>
       </div>
-      <button class="btn btn--blue pull-right" type="submit">Registrar Certificado <i class="fa fa-arrow-right"></i></button>
+      <button class="btn btn--blue pull-right" type="submit">Atualizar Certificado <i class="fa fa-arrow-right"></i></button>
    </form>
 </section>

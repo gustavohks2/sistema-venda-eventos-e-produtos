@@ -81,4 +81,28 @@ class Certificado extends BaseModel {
             echo "Mensagem de Erro: " . $e->getMessage();
         }
     }
+
+    public function atualizar($dados){
+        $array = array(
+            array(
+                "numero" => $dados->numero, "cep" => $dados->cep, "endereco" => $dados->endereco, 
+                "complemento" => $dados->complemento, "bairro" => $dados->bairro, "uf" => $dados->uf, 
+                "cidade" => $dados->cidade, "logradouro" => $dados->logradouro
+            ),
+            array(
+                "nome" => $dados->nome, "cpf" => $dados->cpf, "rg" => $dados->rg, "telefoneContato" => $dados->telefone,
+                "email" => $dados->email,
+            ),
+            array(
+                "dataInicio" => $dados->dataInicio, "dataFim" => $dados->dataFim, "cargaHoraria" => $dados->cargaHoraria,
+                "responsavel" => $dados->responsavel
+            )
+        );
+
+        return $this->updateWithChildRows($array, [
+                    "idEndereco" => $dados->idEndereco,
+                    "idPessoa" => $dados->idPessoa,
+                    "idCertificado" => $dados->idCertificado
+               ]) ? TRUE : FALSE;    
+    }
 }

@@ -36,25 +36,23 @@ class FornecedorController extends BaseController {
         
         $fornecedor = new Fornecedor();
         
-        if($fornecedor->atualizar($dados))
-            $this->redirect("admin/fornecedores", self::SUCCESS, "Editado com sucesso!");
-        else
-           $this->redirect("admin/fornecedores", self::DANGER, "OPS, algo deu errado!");
-        
-    }
-    
-    public function Excluir($request) {
-        
-        $id = $request->get->id;
-        
-        $produto = new Produto();
-
-        if ($produto->excluir($id))
-            $this->redirect("admin/fornecedores", self::SUCCESS, "Excluido com sucesso!");
-        else 
-            $this->redirect("admin/fornecedores", self::DANGER, "OPS, algo deu errado!");
+        if ($fornecedor->atualizar($dados)) $this->redirect("admin/fornecedores", self::SUCCESS, "Editado com sucesso!");
+        else $this->redirect("admin/fornecedores", self::DANGER, "OPS, algo deu errado!");
         
     }
 
-    
+
+    public function bloquear($id) {
+        $fornecedor = new Fornecedor();
+
+        if ($fornecedor->bloquear($id)) $this->redirect("admin/fornecedores", self::INFO, "Bloqueado!");
+        else $this->redirect("admin/fornecedores", self::DANGER, "OPS, algo deu errado!");
+    }    
+
+    public function desbloquear($id) {
+        $fornecedor = new Fornecedor();
+        
+        if ($fornecedor->desbloquear($id)) $this->redirect("admin/fornecedores", self::SUCCESS, "Desloqueado!");
+        else $this->redirect("admin/fornecedores", self::DANGER, "OPS, algo deu errado!");
+    }   
 }

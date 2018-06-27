@@ -23,10 +23,14 @@ $routes[] = ['/fornecedor', 'FornecedorController@index'];
 $routes[] = ['/admin/fornecedor/editar', 'FornecedorController@Editar'];
 $routes[] = ['/admin/fornecedor/excluir', 'FornecedorController@Excluir'];
 $routes[] = ['/fornecedor/editar/salvar', 'FornecedorController@EditarSalvar'];
+$routes[] = ['/fornecedor/bloquear/{id}', 'FornecedorController@bloquear'];
+$routes[] = ['/fornecedor/desbloquear/{id}', 'FornecedorController@desbloquear'];
 
 $routes[] = ['/admin/certificados', 'CertificadoController@index'];
 $routes[] = ['/admin/certificado/cadastro', 'CertificadoController@cadastro'];
 $routes[] = ['/admin/certificado/gerar/{id}', 'CertificadoController@gerarPDF'];
+$routes[] = ['/admin/certificado/editar/{id}', 'CertificadoController@editar'];
+$routes[] = ['/certificado/atualizar', 'CertificadoController@atualizar'];
 $routes[] = ['/certificado/cadastrar', 'CertificadoController@cadastrar'];
 
 return $routes;

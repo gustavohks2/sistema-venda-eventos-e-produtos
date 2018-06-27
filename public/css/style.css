@@ -690,7 +690,7 @@ a:link, .header__box-text a:active {
     position: absolute;
     visibility: hidden; }
   .table__option {
-    width: 10rem;
+    width: 12rem;
     height: 4rem;
     z-index: 9999;
     line-height: 4rem;
